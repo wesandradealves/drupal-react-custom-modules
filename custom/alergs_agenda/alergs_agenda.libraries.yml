@@ -1,0 +1,14 @@
+alergs-agenda:
+  version: 1.x
+  css:
+    layout:
+      css/alergs-agenda-layout.css: {}
+    theme:
+      css/alergs-agenda-theme.css: {}
+  js:
+    js/alergs-agenda.js: {}
+
+react-app:
+  version: 1.0
+  js:
+    js/react/react-app/dist/app.bundle.js: { minified: true }

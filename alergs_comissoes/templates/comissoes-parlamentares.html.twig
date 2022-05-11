@@ -1,0 +1,20 @@
+{# Banner custom #}
+{%
+  include '@alergs_custom/paragraphs/paragraph--banner-custom.html.twig' with {
+    bannerTitle: ' Comissões Parlamentares',
+    bannerSubtitle: 'Conheça os órgãos técnicos da Assembleia destinados a elaborar estudos e emitir pareceres especializados.',
+    bannerImagePath: '/sites/default/files/static/banner-custom.jpg',
+  }
+%}
+
+{# Menu Interno #}
+{{ drupal_view("menu_interno", "block_2", 'comissoes-parlamentares') }}
+
+{# Comissões Parlamentares #}
+{% include '@alergs_comissoes/component/comissoes-parlamentares-list.html.twig' %}
+
+{# Relatório Final Anual #}
+{{ drupal_view("reports", "block_final_annual_report") }}
+
+{# Noticias #}
+{{ drupal_view("noticias", "parliamentary_committees") }}

@@ -1,0 +1,23 @@
+{{ attach_library('alergs_comissoes/nominatas') }}
+
+{# Banner Custom #}
+{%
+  include '@alergs_custom/paragraphs/paragraph--banner-custom.html.twig' with {
+    bannerTitle: 'Nominatas',
+    bannerSubtitle: 'Confira as nominatas de todas as comissões parlamentares.',
+    bannerImagePath: '/sites/default/files/static/banner-custom.jpg',
+  }
+%}
+
+{# Menu Interno #}
+{{ drupal_view("menu_interno", "block_2", 'nominatas') }}
+
+{# Nominatas #}
+<div id="nominatas" class="clearfix">
+	{{ nominatasForm }}
+</div>
+
+{# Noticias #}
+<div id="noticias" class="clearfix">
+	{{ drupal_view("noticias", "parliamentary_committees") }}
+</div>

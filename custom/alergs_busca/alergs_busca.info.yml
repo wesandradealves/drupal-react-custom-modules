@@ -1,0 +1,8 @@
+type: module
+name: Alergs Busca
+description: 'Custom module to search content from ALERGS Portal'
+package: ALERGS
+core_version_requirement: ^8.8 || ^9
+version: '8.x-5.1'
+project: 'alergs_busca'
+configure: alergs_busca.settings

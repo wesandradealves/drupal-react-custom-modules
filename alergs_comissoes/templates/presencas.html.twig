@@ -1,0 +1,19 @@
+{# Banner custom #}
+{%
+  include '@alergs_custom/paragraphs/paragraph--banner-custom.html.twig' with {
+    bannerTitle: comissao.nomeComissao,
+    bannerSubtitle: '',
+    bannerImagePath: '/sites/default/files/static/banner-custom.jpg',
+    bannerStatusComissao: comissao.statusComissao,
+  }
+%}
+
+{# Menu Interno #}
+{{ drupal_view("menu_interno", "block_2", "comissoes-parlamentares/*", id) }}
+
+{{ presencas_form }}
+
+{# Noticias #}
+<div id="noticias" class="clearfix">
+	{{ drupal_view("noticias", "parliamentary_committees") }}
+</div>

@@ -1,0 +1,6 @@
+alergs_agenda.admin_settings_form:  
+  title: 'Configurar link da agenda'  
+  route_name: alergs_agenda.config_form  
+  description: 'Configurar link para Agenda Cultural'  
+  parent: system.admin_config_system  
+  weight: 99  

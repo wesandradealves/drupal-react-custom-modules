@@ -1,0 +1,61 @@
+{{ attach_library('alergs_contratosativos/contratosativos') }}
+
+{%
+include '@alergs_custom/paragraphs/paragraph--banner-custom.html.twig' with {
+  bannerTitle: 'Contratos Ativos',
+  bannerSubtitle: 'Tenha acesso a tabela com todos os contratos ativos da ALRS',
+  bannerImagePath: '/sites/default/files/static/banner.png',
+}
+%}	
+
+<div id="contratos-ativos" class="contratos_ativos">
+
+    {% if contratos %}     
+     
+          {% for row in contratos|batch(4) %}
+                  <div class="contrato-item">N° Contrato</div>
+                  <div id="objeto-contrato" class="contrato-item">Objeto</div>
+                  <div class="contrato-item">Contratada</div>
+                  <div class="contrato-item">CNPJ</div>
+                  <div class="contrato-item">N° Licitação</div>
+                  <div class="contrato-item">Vigência</div>
+                  <div class="contrato-item">Publicação</div>
+              {% for item in row %}
+                  <div class="contrato-item">{{ item.numContrato }}</div>
+                  <div id="objeto-contrato" class="contrato-item">{{ item.objetoContrato }}</div>
+                  <div class="contrato-item">{{ item.empresa }}</div>
+                  <div class="contrato-item">{{ item.cnpj }}</div>
+                  <div class="contrato-item">{{ item.numLicitacao }}</div>
+                  <div class="contrato-item">{{ item.vigencia }}</div>
+                  <div class="contrato-item">{{ item.dtPublicacao }}</div>              
+              {% endfor %}
+          {% endfor %}     
+      
+    {% endif %}
+
+</div>
+
+
+<div id="contratos-ativos" class="contratos_ativos_mobile">
+
+    {% if contratos %}
+
+         {% for item in contratos %}
+                  <div class="contrato-item">N° Contrato</div>
+                  <div class="contrato-item">{{ item.numContrato }}</div>
+                  <div id="objeto-contrato" class="contrato-item">Objeto</div>
+                  <div id="objeto-contrato" class="contrato-item">{{ item.objetoContrato }}</div>
+                  <div class="contrato-item">Contratada</div>
+                  <div class="contrato-item">{{ item.empresa }}</div>
+                  <div class="contrato-item">CNPJ</div>
+                  <div class="contrato-item">{{ item.cnpj }}</div>
+                  <div class="contrato-item">N° Licitação</div>                      
+                  <div class="contrato-item">{{ item.numLicitacao }}</div>
+                  <div class="contrato-item">Vigência</div>
+                  <div class="contrato-item">{{ item.vigencia }}</div>
+                  <div class="contrato-item">Publicação</div>
+                  <div class="contrato-item">{{ item.dtPublicacao }}</div>                           
+          
+        {% endfor %} 
+    {% endif %}
+</div>

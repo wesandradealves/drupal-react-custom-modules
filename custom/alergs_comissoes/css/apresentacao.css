@@ -1,0 +1,97 @@
+
+#historico-reunioes > a {
+    color: white;
+    background-color: #15894F;
+    text-decoration: none;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 15px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#historico-reunioes .text-center > p {
+    font-family: "Noto Serif";
+    font-size: 15px;
+    color: #333333;
+}
+
+#historico-reunioes .container {
+    font-family: "Roboto";
+    background-color: #293341;
+    border-radius: 20px;
+    color: white;
+    padding: 40px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+#historico-reunioes .apresentacao-row {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+#historico-reunioes .apresentacao-row img {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+#historico-reunioes .apresentacao-row > div {
+    display: flex;
+}
+
+#historico-reunioes .apresentacao-row .apresentacao-time {
+    margin-left: 16px;
+}
+
+#historico-reunioes .apresentacao-row.apresentacao-assunto {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+#historico-reunioes .apresentacao-row .apresentacao-link {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    align-items: center;
+}
+
+#comissoes-parlamentares-detalhes {
+    background-color: #f3f7fc;
+}
+
+#comissoes-parlamentares-detalhes .apresentacao {
+    margin: 0 60px;
+    font-family: "Noto Serif";
+}
+
+#comissoes-parlamentares-historico .historico {
+    background-color: white;
+    margin: 0 150px;
+}
+
+#comissoes-parlamentares-detalhes .apresentacao-historico h2 {
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 30px;
+    color: #333333;
+    margin-bottom: 15px;
+    line-height: 30px;
+}
+#comissoes-parlamentares-historico .historico p {
+    font-family: "Noto Serif";
+    font-size: 15px;
+    color: #333333;
+}
+
+.view-menu-interno {
+    background-color: #f3f7fc;
+}
+
+#comissoes-parlamentares-detalhes .apresentacao img {
+  display: none;
+}

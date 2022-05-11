@@ -1,0 +1,10 @@
+alergs_institucional.mesadiretora:
+  path: '/diretoria'
+  defaults:
+    _controller: '\Drupal\alergs_institucional\Controller\InstitucionalController::content'
+    _title: 'Mesa Diretora'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+

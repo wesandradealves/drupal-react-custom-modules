@@ -1,0 +1,26 @@
+{# Banner Custom #}
+{%
+  include '@alergs_custom/paragraphs/paragraph--banner-custom.html.twig' with {
+    bannerTitle: comissao.nomeComissao,
+    bannerImagePath: '/sites/default/files/static/banner-custom.jpg',
+    bannerStatusComissao: comissao.statusComissao,
+  }
+%}
+
+{# Menu Interno #}
+{{ drupal_view("menu_interno", "block_2", "comissoes-parlamentares/*", id) }}
+
+<div class="reunioes-container">
+  <div>
+    <h2 class="text-center">Consulte o Histórico de Reuniões da Comissão</h2>
+
+    {# Histórico de Reuniões: React #}
+    {% include '@alergs_comissoes/component/historico-reunioes-list.html.twig' %}
+
+    {# Histórico de Reuniões: Form #}
+    {{ historico_reunioes_form }}
+  </div>
+</div>
+
+{# Noticias #}
+{{ drupal_view("noticias", "parliamentary_committees") }}

@@ -1,0 +1,122 @@
+.contributionCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f3f7fc;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 31.9%;
+	min-height: 340px;
+	border-radius: 15px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+
+	.contributionContent {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		width: 100%;
+
+		.infoRow {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin: 0;
+			padding: 0;
+			width: fit-content;
+		}
+
+		.labeledIcon {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+			margin-right: 20px;
+			margin-bottom: 15px;
+			.icon {
+				height: 15px;
+				margin: 0;
+				margin-right: 5px;
+				padding: 0;
+			}
+
+			.label {
+				font-size: 13px;
+				color: #333333;
+				font-weight: 500;
+				//white-space: nowrap;
+				margin: 0;
+			}
+			@media (max-width: 450px) {
+				.icon {
+					height: 12px;
+				}
+
+				.label {
+					font-size: 12px;
+				}
+			}
+		}
+
+		.contributionCardText {
+			margin: 0;
+			font-size: 12px;
+			text-align: justify;
+			font-family: 'Roboto', serif;
+			font-weight: 500;
+			color: #333333;
+		}
+		@media (max-width: 450px) {
+			.contributionCardText {
+				font-size: 10px;
+			}
+		}
+	}
+
+	.cardButton {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		box-sizing: border-box;
+		padding: 8px 16px;
+		width: 140px;
+		color: white;
+		background-color: #293341;
+		border-radius: 25px;
+		font-size: 14px;
+		margin: 0;
+		font-weight: 700;
+		cursor: pointer;
+		text-decoration: none;
+		@media (max-width: 450px) {
+			.cardButton {
+				font-size: 14px;
+			}
+		}
+		p {
+			margin: 0;
+		}
+	}
+}
+
+.thirdCard {
+	margin-right: 0px !important;
+}
+
+@media (max-width: 900px) {
+	.contributionCard {
+		width: 70%;
+		margin: 10px 0;
+		margin-right: 0px;
+	}
+}
+@media (max-width: 600px) {
+	.contributionCard {
+		width: 98%;
+	}
+}

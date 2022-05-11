@@ -1,0 +1,8 @@
+alergs-busca:
+  version: 1.x
+  css:
+    layout:
+      css/alergs-busca.css: {}
+  js:
+    js/alergs-busca.js: {}
+    

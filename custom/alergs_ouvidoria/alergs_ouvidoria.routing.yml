@@ -1,0 +1,41 @@
+alergs_ouvidoria.ouvidoria:
+  path: '/ouvidoria'
+  defaults:
+    _controller: '\Drupal\alergs_ouvidoria\Controller\OuvidoriaController::content'
+    _title: 'Ouvidoria'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+
+alergs_ouvidoria.sendEmail:
+  path: '/ouvidoria/send'
+  defaults:
+    _controller: '\Drupal\alergs_ouvidoria\Controller\OuvidoriaController::sendEmail'
+    _title: 'Ouvidoria'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+
+alergs_ouvidoria.validar:
+  path: '/ouvidoria/validar'
+  defaults:
+    _controller: '\Drupal\alergs_ouvidoria\Controller\OuvidoriaController::validate'
+    _title: 'Ouvidoria'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_ouvidoria.config_form:
+  path: '/admin/config/ouvidoria'
+  defaults:
+    _title: 'Configurar conteúdo de Ouvidoria'
+    _form: '\Drupal\alergs_ouvidoria\Form\OuvidoriaForm'
+  requirements:
+    _permission: 'administer custom_mailing settings'
+  options:  
+    _admin_route: TRUE  

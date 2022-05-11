@@ -1,0 +1,5 @@
+name: 'Alergs Widget Deputados'
+type: module
+description: 'Custom module for Alergs Widget Deputados'
+core_version_requirement: ^8.8 || ^9
+package: ALERGS

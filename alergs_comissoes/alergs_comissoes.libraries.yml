@@ -1,0 +1,71 @@
+app:
+  version: 1.x
+  css:
+    layout:
+      #css/layout.css: {}
+    theme:
+      #css/theme.css: {}
+  js:
+    #js/comissoes.js: {}
+
+react:
+  version: 1.x
+  js:
+    js/react/react-app/dist/app.bundle.js: { minified: true }
+
+# Load react for fast components!
+react-cdn:
+  js:
+    https://unpkg.com/react@17/umd/react.development.js: { attributes: { crossorigin: true } }
+    https://unpkg.com/react-dom@17/umd/react-dom.development.js: { attributes: { crossorigin: true } }
+    https://unpkg.com/babel-standalone@6/babel.min.js: {} # TODO: remove this in production!
+    https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js: {}
+
+react-calendar:
+  js:
+    https://cdn.jsdelivr.net/npm/react-calendar@3.4.0/dist/umd/index.min.js: {}
+
+apresentacao:
+  css:
+    page:
+      css/apresentacao.css: {}
+
+agenda:
+  css:
+    component:
+      dist/agenda/agenda.css: {}
+  js:
+    dist/agenda/agenda.bundle.js: {}
+
+composicao:
+  js:
+    dist/composicao/composicao.bundle.js: {}
+  dependencies:
+    - core/drupalSettings
+
+historico-reunioes:
+  css:
+    component:
+      css/historico-reunioes.css: {}
+  js:
+    js/historico-reunioes.js: { attributes: { type: "text/babel" } }
+    https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js: { type: external, minified: true }
+    https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/pt-br.min.js: { type: external, minified: true }
+  dependencies:
+    - core/drupalSettings
+    - alergs_comissoes/react-cdn
+
+publicacoes-relatorios:
+  css:
+    component:
+      css/publicacoes-relatorios.css: {}
+  js:
+    js/publicacoes.js: { attributes: { type: "text/babel" } }
+    js/relatorios.js: { attributes: { type: "text/babel" } }
+  dependencies:
+    - core/drupalSettings
+
+nominatas:
+  css:
+    component:
+      css/nominatas-list.css: {}

@@ -1,0 +1,499 @@
+{
+    "lista": [
+        {
+            "id": "1",
+            "idDeputado": "13",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/adolfobrito/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/adolfobrito/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/adolfobrito/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/adolfobrito/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/adolfobrito/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "2",
+            "idDeputado": "134",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/aloisioclassmann/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/aloisioclassmann/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/aloisioclassmann/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/aloisioclassmann/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/aloisioclassmann/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "3",
+            "idDeputado": "2083",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/anyortiz/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/anyortiz/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/anyortiz/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/anyortiz/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/anyortiz/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "4",
+            "idDeputado": "2028",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/edegarpretto/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/edegarpretto/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/edegarpretto/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/edegarpretto/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/edegarpretto/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "5",
+            "idDeputado": "2085",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/eduardoloureiro/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/eduardoloureiro/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/eduardoloureiro/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/eduardoloureiro/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/eduardoloureiro/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "6",
+            "idDeputado": "2086",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/eltonweber/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/eltonweber/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/eltonweber/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/eltonweber/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/eltonweber/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "7",
+            "idDeputado": "65",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/fredericoantunes/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/fredericoantunes/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/fredericoantunes/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/fredericoantunes/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/fredericoantunes/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "8",
+            "idDeputado": "2078",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/gabrielsouza/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/gabrielsouza/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/gabrielsouza/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/gabrielsouza/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/gabrielsouza/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "9",
+            "idDeputado": "1502",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/gilbertocapoani/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/gilbertocapoani/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/gilbertocapoani/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/gilbertocapoani/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/gilbertocapoani/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "10",
+            "idDeputado": "2036",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/jefersonfernandes/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/jefersonfernandes/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/jefersonfernandes/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/jefersonfernandes/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/jefersonfernandes/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "11",
+            "idDeputado": "2024",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/julianabrizola/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/julianabrizola/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/julianabrizola/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/julianabrizola/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/julianabrizola/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "12",
+            "idDeputado": "2030",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/luizmainardi/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/luizmainardi/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/luizmainardi/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/luizmainardi/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/luizmainardi/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "13",
+            "idDeputado": "77",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/luislara/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/luislara/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/luislara/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/luislara/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/luislara/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "14",
+            "idDeputado": "1509",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/pedropereira/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/pedropereira/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/pedropereira/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/pedropereira/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/pedropereira/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "15",
+            "idDeputado": "58",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/sergioperes/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/sergioperes/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/sergioperes/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/sergioperes/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/sergioperes/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "16",
+            "idDeputado": "2093",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/sergioturra/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/sergioturra/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/sergioturra/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/sergioturra/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/sergioturra/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "17",
+            "idDeputado": "2098",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/tiagosimon/pt-br/transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/tiagosimon/pt-br/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/tiagosimon/pt-br/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/tiagosimon/pt-br/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/tiagosimon/pt-br/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "18",
+            "idDeputado": "2032",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/valdecioliveira/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/valdecioliveira/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/valdecioliveira/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/valdecioliveira/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/valdecioliveira/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "19",
+            "idDeputado": "2100",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/vilmarzanchin/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/vilmarzanchin/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/vilmarzanchin/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/vilmarzanchin/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/vilmarzanchin/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "20",
+            "idDeputado": "1510",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/zilabreitenbach/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/zilabreitenbach/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/zilabreitenbach/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/zilabreitenbach/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/zilabreitenbach/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "21",
+            "idDeputado": "2095",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/zenunes/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/zenunes/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/zenunes/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/zenunes/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/zenunes/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "22",
+            "idDeputado": "2117",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/airtonlima/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/airtonlima/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/airtonlima/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/airtonlima/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/airtonlima/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "23",
+            "idDeputado": "2139",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/betofantinel/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/betofantinel/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/betofantinel/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/betofantinel/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/betofantinel/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "24",
+            "idDeputado": "2109",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/capitaomacedo/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/capitaomacedo/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/capitaomacedo/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/capitaomacedo/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/capitaomacedo/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "25",
+            "idDeputado": "2135",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/carlosburigo/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/carlosburigo/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/carlosburigo/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/carlosburigo/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/carlosburigo/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "26",
+            "idDeputado": "2140",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/clairkuhn/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/clairkuhn/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/clairkuhn/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/clairkuhn/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/clairkuhn/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "27",
+            "idDeputado": "2126",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/dalcisooliveira/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/dalcisooliveira/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/dalcisooliveira/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/dalcisooliveira/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/dalcisooliveira/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "28",
+            "idDeputado": "2110",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/dirceufranciscon/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/dirceufranciscon/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/dirceufranciscon/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/dirceufranciscon/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/dirceufranciscon/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "29",
+            "idDeputado": "2123",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/drthiagoduarte/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/drthiagoduarte/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/drthiagoduarte/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/drthiagoduarte/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/drthiagoduarte/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "30",
+            "idDeputado": "2112",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/elizandrosabino/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/elizandrosabino/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/elizandrosabino/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/elizandrosabino/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/elizandrosabino/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "31",
+            "idDeputado": "2133",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/ericlins/pt-br/transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/ericlins/pt-br/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/ericlins/pt-br/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/ericlins/pt-br/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/ericlins/pt-br/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "32",
+            "idDeputado": "2045",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/ernanipolo/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/ernanipolo/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/ernanipolo/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/ernanipolo/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/ernanipolo/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "33",
+            "idDeputado": "2127",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/fabioostermann/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/fabioostermann/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/fabioostermann/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/fabioostermann/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/fabioostermann/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "34",
+            "idDeputado": "2141",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/faisalkaram/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/faisalkaram/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/faisalkaram/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/faisalkaram/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/faisalkaram/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "35",
+            "idDeputado": "2132",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/fernandomarroni/pt-br/transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/fernandomarroni/pt-br/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/fernandomarroni/pt-br/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/fernandomarroni/pt-br/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/fernandomarroni/pt-br/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "36",
+            "idDeputado": "2114",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/fransomensi/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/fransomensi/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/fransomensi/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/fransomensi/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/fransomensi/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "37",
+            "idDeputado": "2113",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/francianebayer/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/francianebayer/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/francianebayer/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/francianebayer/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/francianebayer/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "38",
+            "idDeputado": "2128",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/gauchodageral/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/gauchodageral/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/gauchodageral/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/gauchodageral/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/gauchodageral/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "39",
+            "idDeputado": "28",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/gersonburmann/pt-br/transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/gersonburmann/pt-br/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/gersonburmann/pt-br/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/gersonburmann/pt-br/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/gersonburmann/pt-br/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "40",
+            "idDeputado": "2115",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/giusepperiesgo/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/giusepperiesgo/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/giusepperiesgo/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/giusepperiesgo/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/giusepperiesgo/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "41",
+            "idDeputado": "2116",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/issurkoch/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/issurkoch/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/issurkoch/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/issurkoch/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/issurkoch/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "42",
+            "idDeputado": "1511",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/kellymoraes/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/kellymoraes/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/kellymoraes/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/kellymoraes/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/kellymoraes/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "43",
+            "idDeputado": "93",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/lucianagenro/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/lucianagenro/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/lucianagenro/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/lucianagenro/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/lucianagenro/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "44",
+            "idDeputado": "2130",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/luizmarenco/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/luizmarenco/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/luizmarenco/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/luizmarenco/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/luizmarenco/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "45",
+            "idDeputado": "2142",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/marcusvinicius/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/marcusvinicius/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/marcusvinicius/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/marcusvinicius/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/marcusvinicius/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "46",
+            "idDeputado": "2124",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/mateuswesp/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/mateuswesp/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/mateuswesp/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/mateuswesp/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/mateuswesp/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "47",
+            "idDeputado": "2125",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/neriocarteiro/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/neriocarteiro/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/neriocarteiro/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/neriocarteiro/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/neriocarteiro/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "48",
+            "idDeputado": "2111",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/paparicobacchi/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/paparicobacchi/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/paparicobacchi/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/paparicobacchi/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/paparicobacchi/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "49",
+            "idDeputado": "2137",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/patriciaalba/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/patriciaalba/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/patriciaalba/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/patriciaalba/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/patriciaalba/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "50",
+            "idDeputado": "194",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/pepevargas/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/pepevargas/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/pepevargas/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/pepevargas/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/pepevargas/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "51",
+            "idDeputado": "2131",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/rodrigomaroni/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/rodrigomaroni/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/rodrigomaroni/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/rodrigomaroni/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/rodrigomaroni/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "52",
+            "idDeputado": "2120",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/ruyirigaray/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/ruyirigaray/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/ruyirigaray/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/ruyirigaray/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/ruyirigaray/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "53",
+            "idDeputado": "2122",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/sofiacavedon/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/sofiacavedon/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/sofiacavedon/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/sofiacavedon/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/sofiacavedon/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "54",
+            "idDeputado": "2118",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/tenentecoronelzucco/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/tenentecoronelzucco/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/tenentecoronelzucco/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/tenentecoronelzucco/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/tenentecoronelzucco/Transpar%C3%AAncia/Votos.aspx"
+        },
+        {
+            "id": "55",
+            "idDeputado": "2129",
+            "transparenciaUrl": "http://ww1.al.rs.gov.br/vilmarlourenco/Transpar%C3%AAncia.aspx",
+            "diariasUrl": "http://ww1.al.rs.gov.br/vilmarlourenco/Transpar%C3%AAncia/Di%C3%A1rias.aspx",
+            "gastosUrl": "http://ww1.al.rs.gov.br/vilmarlourenco/Transpar%C3%AAncia/Gastos.aspx",
+            "presencasUrl": "http://ww1.al.rs.gov.br/vilmarlourenco/Transpar%C3%AAncia/Presen%C3%A7as.aspx",
+            "votosUrl": "http://ww1.al.rs.gov.br/vilmarlourenco/Transpar%C3%AAncia/Votos.aspx"
+        }
+    ]
+}

@@ -1,0 +1,194 @@
+#pronunciamentos {
+    // margin-bottom: -60px;
+    // .owl-stage-outer {
+ 
+    // }
+    // .owl-next {
+    //     right: -20px;
+    // }
+    // .owl-prev {
+    //     left: -20px;
+    // }
+    .owl-carousel {
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: 0;
+        background-color: transparent;
+        .owl-stage-outer {
+            padding-left: 5px;
+            .item {
+                background: white;
+                padding: 30px;
+                border-radius: 20px;
+            }                   
+        }
+    }
+}
+// .deputado-interna {
+//     background: #f3f7fc;
+//     margin: 0 -15px;
+// }
+.react-calendar, .react-calendar * {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8rem;
+    text-decoration: none !important;
+    outline: 0 !important;
+    border: 0 !important;
+}
+.react-calendar button[class*="active"] {
+    background: orangered;
+    color: white;
+}
+.react-calendar {
+    background: white;
+    border-radius: 20px;
+    padding: 20px 40px;
+    max-width: 568px;
+    margin: 0 auto;  
+    height: 100%;  
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;    
+    [class*="prev2"],
+    [class*="next2"] {
+        display: none;
+    }
+    [class*="prev-button"],
+    [class*="next-button"] {
+        font-size: 1.9rem;
+        width: 30px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+        top: -3px;
+        position: relative;
+    }
+    button {
+        border: 0;
+        background: transparent;
+        border-radius: 20px;
+    }
+    .react-calendar__navigation {
+        display: flex;
+        background: #f3f7fc;
+        border-radius: 20px; 
+        padding: 5px;
+        margin-bottom: 2px;
+        font-size: 1rem;
+        flex: 0 0 auto;
+    }
+    .react-calendar__viewContainer {
+        flex: 1;
+        height: 100%;
+        .react-calendar__month-view {
+            height: inherit;
+            > * {
+                height: inherit;
+            }
+        }
+    }
+    .react-calendar__month-view__days,
+    .react-calendar__month-view__weekdays {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        > * {
+            background: #f3f7fc;
+            border-radius: 20px;             
+            text-align: center;
+            flex: 0 0 auto;
+            width: 13.2%;
+            padding: 5px;
+            margin: 2px;
+            max-width: initial !important;
+            flex-basis: initial !important;    
+            &:nth-child(7n+1) {
+                margin-left: 0
+            }     
+            &:nth-child(7n+7) {
+                margin-right: 0
+            }                    
+        }        
+    }
+}
+
+#agenda {
+    .container {
+        padding-bottom: 110px;
+    }
+}
+
+.owl-theme .owl-nav {
+    margin-top: 25px !important;
+    height: 0
+}
+
+.proposicoes-column-wrapper {
+    align-items: stretch;
+}
+
+#proposicoes {
+    margin: 0 -15px;
+    .comissoes-column,
+    .proposicoes-column {
+        display: flex;
+        flex-flow: column wrap;
+        h2 {
+            flex: 0 0 auto;
+            & + * {
+                flex: 1;
+            }
+        }
+    } 
+    .proposicoes-column {
+        .owl-carousel {
+            .owl-stage, 
+            .owl-stage-outer,
+            .owl-item, 
+            .owl-item .item {
+                height: 100%;
+            }            
+        }
+    }
+    .owl-carousel{
+        // .owl-stage, 
+        // .owl-stage-outer,
+        // .owl-item, 
+        // .owl-item .item {
+        //     height: 100%;
+        // }
+        .owl-item .item {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .owl-item {
+            padding: 0 35px !important;
+            color: black;
+            .row {
+                padding: 5px;
+                border-radius: 5px;
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+                &:hover {
+                    background-color: #f70414;
+                    color: white;
+                }
+            }
+            // transform: rotate(-90deg);
+        }         
+    } 
+    .comissoes-column .owl-carousel .owl-item .item {
+        align-items: center
+    }    
+    h2  {
+        display: flex;
+    }
+}

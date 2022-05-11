@@ -1,0 +1,5 @@
+name: 'Alergs Newsletter'
+type: module
+description: 'Custom module for Alergs Newsletter'
+core_version_requirement: ^8.8 || ^9
+package: ALERGS

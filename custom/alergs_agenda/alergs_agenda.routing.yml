@@ -1,0 +1,29 @@
+alergs_agenda.agenda:
+  path: '/agenda'
+  defaults:
+    _controller: '\Drupal\alergs_agenda\Controller\AgendaController::content'
+    _title: 'Agenda'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_agenda.widget:
+  path: '/agenda-widget'
+  defaults:
+    _controller: '\Drupal\alergs_agenda\Controller\AgendaWidgetController::content'
+    _title: 'Agenda'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_agenda.config_form:
+  path: '/admin/config/agenda'
+  defaults:
+    _title: 'Configurar link da Agenda Cultural'
+    _form: '\Drupal\alergs_agenda\Form\AgendaForm'
+  requirements:
+    _permission: 'administer custom_mailing settings'
+  options:  
+    _admin_route: TRUE  

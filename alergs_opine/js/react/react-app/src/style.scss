@@ -1,0 +1,30 @@
+#my-app-target {
+  .menu-interno {
+    padding: 20px 15px 25px 15px;
+    background-color: #293341;
+  }
+  .bannerSection {
+    background: repeating-linear-gradient(white, white 49.9%, #f3f7fc50.1%, #f3f7fc 100%);
+    .bannerImage {
+      @media (min-width: 1000px) {
+        width: calc(100% - 120px);
+        margin: auto;
+        left: 60px;
+      }
+    }
+    .bannerText {
+      padding-left: 30px;
+      @media (min-width: 1000px) {
+        padding-left: 130px;
+      }
+      h1 {
+        font-family: "Roboto";
+        font-weight: 600;
+      }
+      h2 {
+        font-size: 15px;
+        font-family: "Noto Serif";
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Contains alergs_busca.module
+ */
+
+/**
+* Implementation of hook_form_alter()
+*/
+function alergs_busca_form_alter(&$form, &$form_state, $form_id) {
+    if($form_id == 'search_block_form') {
+        $form['#action'] = '/busca';
+    }
+  }

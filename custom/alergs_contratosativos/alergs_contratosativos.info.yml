@@ -1,0 +1,5 @@
+name: 'Alergs Contratos ativos'
+type: module
+description: 'Custom module for Contratos ativos template'
+core_version_requirement: ^8.8 || ^9
+package: ALERGS

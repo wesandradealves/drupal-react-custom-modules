@@ -1,0 +1,11 @@
+alergs_contratosativos.contratos_ativos:
+  path: 'contratos-ativos'
+  defaults:
+    _controller: '\Drupal\alergs_contratosativos\Controller\ContratosAtivosController::content'
+    _title: 'Contratos Ativos'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+

@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Contains alergs_ouvidoria.module.
+ */
+
+use Drupal\Core\Controller\ControllerBase;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use \Drupal\user\Entity\User;
+
+use Drupal\Core\Mail\MailManagerInterface;
+use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_mail().
+ */
+function alergs_ouvidoria_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['langcode'],
+  );
+  switch ($key) {
+    case 'ouvidoria':
+    
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('Email: @title', array('@title' => $params['title']), $options);
+      $message['body'][] =  $params['message'];
+      $message['link_url'] = $params['link'];
+      $message['head_img'] = $base_root . $base_path . drupal_get_path('module', 'alergs_ouvidoria') . '/images/ouvidoria-topo.jpg' ;
+    break;
+  }
+  
+}
+/**
+ * Implements hook_theme().
+ */
+function alergs_ouvidoria_theme($existing, $type, $theme, $path) {
+  global $base_root, $base_path;
+  return [		
+    'alergs_ouvidoria_ouvidoria' => [
+      'render element' => 'children',
+      'template' => 'ouvidoria',
+      'path' => $path . '/templates',
+      'variables' => [
+        'title1' => [],
+      'title2' => [],
+      'text1' => [],
+      'text2' => [],
+      'text3' => [],
+      'image1' =>$base_root . $base_path . drupal_get_path('module', 'alergs_ouvidoria') . '/images/cpBanner.jpg' 
+      ],
+    ],
+    'alergs_ouvidoria_validar' => [
+      'render element' => 'children',
+      'template' => 'validar',
+      'path' => $path . '/templates',
+      'variables' => [
+        'image1' =>$base_root . $base_path . drupal_get_path('module', 'alergs_ouvidoria') . '/images/cpBanner.jpg'
+      ],
+    ],
+   
+  ];
+
+}

@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Contains alergs_transmissoes.module.
+ */
+
+use Drupal\Core\Controller\ControllerBase;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use \Drupal\user\Entity\User;
+
+/**
+ * Implements hook_theme().
+ */
+function alergs_transmissoes_theme($existing, $type, $theme, $path) {
+
+  return [		  
+    'alergs_transmissoes_transmissoes' => [
+      'render element' => 'children',
+      'template' => 'transmissoes',
+      'path' => $path . '/templates',
+      'variables' => ['id' => NULL],
+    ]     
+  ];
+}

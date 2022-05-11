@@ -1,0 +1,534 @@
+<?php
+
+/**
+ * @file
+ * Contains alergs_import.module
+ */
+
+use Drupal\Core\Controller\ControllerBase;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use \Drupal\user\Entity\User;
+use \Drupal\node\Entity\Node;
+use \Drupal\file\Entity\File;
+Use \Drupal\Core\File\FileSystemInterface;
+
+
+/*
+* Function for call Alergs Services - POST
+*/ 
+function call_alergs_api_post(){
+
+    $jsonData = array(
+        'login' => \Drupal::config('alergs_import.settings')->get('alergs_import_user'),
+        'senha' => \Drupal::config('alergs_import.settings')->get('alergs_import_password'),
+    );
+
+    $jsonDataEncoded = json_encode($jsonData);
+
+    $url = \Drupal::config('alergs_import.settings')->get('alergs_import_url').'/alergsws/rest/login';
+
+    $ch = curl_init($url);
+
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); 
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    $result = curl_exec($ch);
+
+    curl_close($ch);  
+
+    return $result;
+
+}
+
+function alergs_get_manchetes() {
+
+    $token_alergs = call_alergs_api_post();
+
+    $authorization = "Authorization: Bearer ".$token_alergs;
+
+
+    $url_listaMaterias = \Drupal::config('alergs_import.settings')->get('alergs_import_url').'/alergsws/rest/agenciadenoticia/listarManchetes/json/';    
+    $curl = curl_init($url_listaMaterias);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization )); 
+    $result = curl_exec($curl);
+    curl_close($curl);  
+
+    $resultArray = json_decode($result, TRUE);
+
+    foreach ($resultArray as $key => $values) {
+
+        $count = 0;
+        $manchetes = array();
+
+        foreach ($values as $news) {
+
+            ++$count;
+
+            $newsObject = json_decode(json_encode($news));
+            $manchetes[] = $newsObject->idMateria;
+        }
+    }
+
+    return $manchetes;
+
+}
+
+function alergs_get_destaques() {
+
+    $token_alergs = call_alergs_api_post();
+    $manchetes = alergs_get_manchetes();
+
+    $jsonData = array(
+        'listaIdMateria' =>  array(),
+        'listaIgnorarIdMateria' => $manchetes,
+        'listaIdTipoMateria' => array(),
+        'listaIgnorarIdTipoMateria' => array(),
+    );
+  
+    $jsonDataEncoded = json_encode($jsonData);
+
+    $authorization = "Authorization: Bearer ".$token_alergs;
+
+    $dateInit = "CARGA DE CONTEUDO - HORA INCIAL - ".date("Y-m-d h:i:sa");
+
+    \Drupal::logger('alergs_import')->notice($dateInit);  
+
+
+    $url_listaMaterias = \Drupal::config('alergs_import.settings')->get('alergs_import_url').'/alergsws/rest/agenciadenoticia/listarDestaqueNoticias/json/';    
+    $curl = curl_init($url_listaMaterias);
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization )); 
+    $result = curl_exec($curl);
+    curl_close($curl);  
+
+    $resultArray = json_decode($result, TRUE);
+
+    foreach ($resultArray as $key => $values) {
+
+        $count = 0;
+        $destaques = array();
+
+        foreach ($values as $news) {
+
+            ++$count;
+
+            $newsObject = json_decode(json_encode($news));
+            $destaques[] = $newsObject->idMateria;
+        }
+    }
+
+    return $destaques;
+
+
+}
+
+
+function alergs_get_daily_news_update($id_materias){
+    $token_alergs = call_alergs_api_post();
+
+    $jsonData = array(
+        'dataInicio' =>  "",
+        'dataFim' => "",
+        'listaIdMateria' => $id_materias,
+        'listaIgnorarIdMateria' => array(),
+        'listaIdTipoMateria' => array(),
+        'publicada' => "",
+    );
+  
+    $jsonDataEncoded = json_encode($jsonData);
+
+    $authorization = "Authorization: Bearer ".$token_alergs;
+
+    $dateInit = "CARGA DE CONTEUDO - HORA INCIAL - ".date("Y-m-d h:i:sa");
+
+    \Drupal::logger('alergs_import')->notice($dateInit);  
+
+
+    $url_listaMaterias = \Drupal::config('alergs_import.settings')->get('alergs_import_url').'/alergsws/rest/agenciadenoticia/listarNoticias/json/';    
+    $curl = curl_init($url_listaMaterias);
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization )); 
+    $result = curl_exec($curl);
+    curl_close($curl);  
+
+    $resultArray = json_decode($result, TRUE);
+
+    foreach ($resultArray as $key => $values) {
+
+        $count = 0;
+
+        foreach ($values as $news) {
+
+            ++$count;
+
+            $newsObject = json_decode(json_encode($news));
+
+            $nodeExistente = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['field_idmateria' => $newsObject->idMateria]);
+
+            if(empty($nodeExistente)){
+
+                $node = Node::create(['type' => 'noticias']);
+                $node->langcode = "pt-br";
+                $node->uid = 1;
+                $node->promote = 0;
+                $node->sticky = 0;
+                $node->title= $newsObject->tituloMateria;
+                $node->set('body', $newsObject->textoMateria);
+                $node->body->format = 'full_html';
+                $node->field_idmateria = $newsObject->idMateria;
+                $node->field_autoria = $newsObject->autoria;
+                $node->field_paraeditor = $newsObject->paraEditor;
+                $node->field_horapublicao = $newsObject->horaPublicao;
+                $node->field_descricaoarea = $newsObject->areaMateria;
+                $node->field_lead = $newsObject->lead;
+                $node->field_editornome = $newsObject->editorNome;
+                $node->field_creditofoto = $newsObject->creditoFoto;
+                $node->field_idarea = $newsObject->idArea;
+
+                if($newsObject->idTipoMateria == 22){
+                    $node->field_categoria = array("Artigos");
+                }elseif ($newsObject->idTipoMateria == 2) {
+                    $node->field_categoria = array("Comissões","Todas");
+                }elseif ($newsObject->idTipoMateria == 3) {
+                    $node->field_categoria = array("Deputados","Todas");
+                }elseif ($newsObject->idTipoMateria == 4) {
+                    $node->field_categoria = array("Comissões","Deputados","Todas");
+                }else{
+                    $node->field_categoria = array("Todas");
+                }
+
+                $node->field_idalbum = $newsObject->idAlbum;
+                $node->field_idfotografia = $newsObject->idFotografia;
+                $node->field_idtipomateria = $newsObject->idTipoMateria;
+                $node->field_tipomateria = $newsObject->tipoMateria;
+
+                $node->setNewRevision(TRUE);
+                $node->revision_log = 'Created revision for node' . $nid;
+               
+                $ws_data = $newsObject->paraEditor." ".$newsObject->horaPublicao.":00";
+                $dataStr = str_replace("/", "-", $ws_data);
+                $newDate = strtotime($dataStr);
+                $node->setRevisionCreationTime($newDate);
+                $node->changed = $newDate;
+                $node->created = $newDate;
+
+                $node->promote = 1;
+
+                if($newsObject->indPublicacaoLiberada == "N"){
+                    $node->status = 0;
+                }else{
+                    $node->status = 1;
+                }
+
+                if(!empty($newsObject->urlFotografia)){    
+                    $value_image = $newsObject->urlFotografia;
+                    $path_image = pathinfo($value_image);
+                    $data_image = file_get_contents($value_image);
+                    $file = file_save_data($data_image, "public://".$path_image['filename'].".".$path_image['extension'], FileSystemInterface::EXISTS_REPLACE);
+                    $node->field_img_noticia = $file;
+                }
+
+                $node->save();
+
+                $nid = $node->id(); 
+
+                drush_print($count." - CREATED - Noticia: [". $newsObject->idMateria ."] - " .$newsObject->tituloMateria);
+
+            }else{
+
+                $node = Node::load(key($nodeExistente)); 
+                $node->title= $newsObject->tituloMateria;
+                $node->set('body', $newsObject->textoMateria);
+                $node->body->format = 'full_html';
+                $node->field_idmateria = $newsObject->idMateria;
+                $node->field_autoria = $newsObject->autoria;
+                $node->field_paraeditor = $newsObject->paraEditor;
+                $node->field_horapublicao = $newsObject->horaPublicao;
+                $node->field_descricaoarea = $newsObject->areaMateria;
+                $node->field_lead = $newsObject->lead;
+                $node->field_editornome = $newsObject->editorNome;
+                $node->field_creditofoto = $newsObject->creditoFoto;
+                $node->field_idarea = $newsObject->idArea;
+
+                if($newsObject->idTipoMateria == 22){
+                    $node->field_categoria = array("Artigos");
+                }elseif ($newsObject->idTipoMateria == 2) {
+                    $node->field_categoria = array("Comissões","Todas");
+                }elseif ($newsObject->idTipoMateria == 3) {
+                    $node->field_categoria = array("Deputados","Todas");
+                }elseif ($newsObject->idTipoMateria == 4) {
+                    $node->field_categoria = array("Comissões","Deputados","Todas");
+                }else{
+                    $node->field_categoria = array("Todas");
+                }
+                
+                $node->field_idalbum = $newsObject->idAlbum;
+                $node->field_idfotografia = $newsObject->idFotografia;
+                $node->field_idtipomateria = $newsObject->idTipoMateria;
+                $node->field_tipomateria = $newsObject->tipoMateria;
+
+                $node->setNewRevision(TRUE);
+                $node->revision_log = 'Created revision for node' . $nid;
+                
+                $ws_data = $newsObject->paraEditor." ".$newsObject->horaPublicao.":00";
+                $dataStr = str_replace("/", "-", $ws_data);
+                $newDate = strtotime($dataStr);
+                $node->changed = $newDate;
+                $node->created = $newDate;
+                $node->setRevisionCreationTime($newDate);
+                $node->promote = 1;
+
+                if($newsObject->indPublicacaoLiberada == "N"){
+                    $node->status = 0;
+                }else{
+                    $node->status = 1;
+                }
+
+                if(!empty($newsObject->urlFotografia)){                  
+                    $value_image = $newsObject->urlFotografia;
+                    $path_image = pathinfo($value_image);
+                    $data_image = file_get_contents($value_image);
+                    $file = file_save_data($data_image, "public://".$path_image['filename'].".".$path_image['extension'], FileSystemInterface::EXISTS_REPLACE);
+                    $node->field_img_noticia = $file;
+                }
+
+                $node->save();
+
+                drush_print($count." - UPDATED - Noticia: [". $newsObject->idMateria ."] - " .$newsObject->tituloMateria);
+            }
+        }
+    }
+
+    $dateInit = "CARGA DE CONTEUDO - HORA FINAL - ".date("Y-m-d h:i:sa");
+
+    \Drupal::logger('alergs_import')->notice($dateInit);  
+}
+
+
+function alergs_get_daily_radio_update($id_materias){
+    
+    $token_alergs = call_alergs_api_post();
+
+    $jsonData = array(
+        'lista' =>  [array(
+            'Liberada' => [1],
+            'idMateria' => $id_materias
+        )]
+    ); 
+  
+    $jsonDataEncoded = json_encode($jsonData);
+
+    $authorization = "Authorization: Bearer ".$token_alergs;
+
+    $dateInit = "CARGA DE CONTEUDO RADIO - HORA INCIAL - ".date("Y-m-d h:i:sa");
+
+    \Drupal::logger('alergs_import')->notice($dateInit);  
+
+
+    $url_listaMaterias = \Drupal::config('alergs_import.settings')->get('alergs_import_url').'/alergsws/rest/radio/listarNoticiasRadio/json/';    
+    $curl = curl_init($url_listaMaterias);
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization )); 
+    $result = curl_exec($curl);
+    curl_close($curl);  
+
+    $resultArray = json_decode($result, TRUE);
+
+    foreach ($resultArray as $key => $values) {
+
+        $count = 0;
+
+        foreach ($values as $news) {
+
+            ++$count;
+
+            $radioalObject = json_decode(json_encode($news));
+
+            $nodeExistente = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['field_idmateria' => $radioalObject->idMateria]);
+
+            if(empty($nodeExistente)){
+
+                $node = Node::create(['type' => 'radio']);
+                $node->langcode = "pt-br";
+                $node->uid = 1;
+                $node->promote = 0;
+                $node->sticky = 0;
+                $node->title = $radioalObject->titulo;
+                $node->field_cartola = $radioalObject->cartola;
+                $node->field_datahora = $radioalObject->dataHora;
+                $node->field_descricaoclasse = $radioalObject->descricaoClasse;
+                $node->set('body', $radioalObject->descricaoMateria);
+                $node->body->format = 'full_html';
+                $node->field_arquivo = $radioalObject->arquivo;
+                $node->field_idclassemateria = $radioalObject->idClasseMateria;
+                $node->field_palavraschave = $radioalObject->palavrasChave;
+                $node->field_idmateria = $radioalObject->idMateria;
+                $node->field_idreporter = $radioalObject->idReporter;
+                $node->field_idprograma = $radioalObject->idPrograma;
+                $node->field_nomereporter = $radioalObject->nomeReporter;
+
+                $node->field_podcast = array($radioalObject->podcast);
+
+                $node->setNewRevision(TRUE);
+                $node->revision_log = 'Created revision for node' . $radioalObject->idMateria;
+               
+                $dataStr = str_replace("/", "-", $radioalObject->dataHora);
+                $newDate = strtotime($dataStr);
+                $node->setRevisionCreationTime($newDate);
+                $node->changed = $newDate;
+                $node->created = $newDate;
+
+                $node->save();
+                $nid = $node->id(); 
+                drush_print($count." - CREATED - RADIO AL: [". $radioalObject->idMateria ."] - " .$radioalObject->titulo);
+
+            }else{
+
+                $node = Node::load(key($nodeExistente)); 
+                $node->title = $radioalObject->titulo;
+                $node->field_cartola = $radioalObject->cartola;
+                $node->field_datahora = $radioalObject->dataHora;
+                $node->field_descricaoclasse = $radioalObject->descricaoClasse;
+                $node->set('body', $radioalObject->descricaoMateria);
+                $node->body->format = 'full_html';
+                $node->field_arquivo = $radioalObject->arquivo;
+                $node->field_idclassemateria = $radioalObject->idClasseMateria;
+                $node->field_palavraschave = $radioalObject->palavrasChave;
+                $node->field_idmateria = $radioalObject->idMateria;
+                $node->field_idreporter = $radioalObject->idReporter;
+                $node->field_idprograma = $radioalObject->idPrograma;
+                $node->field_nomereporter = $radioalObject->nomeReporter;
+
+                $node->field_podcast = array($radioalObject->podcast);
+                
+                $node->setNewRevision(TRUE);
+                $node->revision_log = 'Created revision for node' . $radioalObject->idMateria;
+               
+                $dataStr = str_replace("/", "-", $radioalObject->dataHora);
+                $newDate = strtotime($dataStr);
+                $node->setRevisionCreationTime($newDate);
+                $node->changed = $newDate;
+                $node->created = $newDate;
+
+                $node->promote = 1;
+                $node->save();
+                drush_print($count." - UPDATED - RADIO AL: [". $radioalObject->idMateria ."] - " .$radioalObject->titulo);
+            }
+        }
+    }
+
+    $dateInit = "CARGA DE CONTEUDO RADIO - HORA FINAL - ".date("Y-m-d h:i:sa");
+
+    \Drupal::logger('alergs_import')->notice($dateInit);  
+}
+
+function alergs_get_daily_tv_update($id_materias){
+    
+    $token_alergs = call_alergs_api_post();
+
+    $jsonData = array(
+        'id' =>  $id_materias
+    ); 
+
+    $jsonDataEncoded = json_encode($jsonData);
+
+    $authorization = "Authorization: Bearer ".$token_alergs;
+
+    $dateInit = "CARGA DE CONTEUDO TV - HORA INCIAL - ".date("Y-m-d h:i:sa");
+
+    \Drupal::logger('alergs_import')->notice($dateInit);  
+
+
+    $url_listaMaterias = \Drupal::config('alergs_import.settings')->get('alergs_import_url').'/alergsws/rest/tv/listarConteudosTV/json/';    
+    $curl = curl_init($url_listaMaterias);
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization )); 
+    $result = curl_exec($curl);
+    curl_close($curl);  
+
+    $resultArray = json_decode($result, TRUE);
+
+    foreach ($resultArray as $key => $values) {
+
+        $count = 0;
+
+        foreach ($values as $tval_content) {
+
+            ++$count;
+
+            $tvalObject = json_decode(json_encode($tval_content));
+
+            $nodeExistente = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['field_idcadastrovideo' => $tvalObject->idCadastroVideo]);
+
+            if(empty($nodeExistente)){
+
+                $node = Node::create(['type' => 'tv_al']);
+                $node->langcode = "pt-br";
+                $node->uid = 1;
+                $node->promote = 0;
+                $node->sticky = 0;
+                $node->title = $tvalObject->manchete;
+                $node->set('body', $tvalObject->sinopse);
+                $node->body->format = 'full_html';
+                $node->field_idcadastrovideo = $tvalObject->idCadastroVideo;
+                $node->field_reporter = $tvalObject->reporter;
+                $node->field_urlvideo = $tvalObject->urlVideo;
+                $node->field_cinegrafista = $tvalObject->cinegrafista;
+                $node->field_data = $tvalObject->data;
+
+                $dataStr = str_replace("/", "-", $tvalObject->data);
+                $newDate = strtotime($dataStr);
+                $node->setRevisionCreationTime($newDate);
+                $node->changed = $newDate;
+                $node->created = $newDate;
+
+                $node->save();
+
+                $nid = $node->id(); 
+
+                drush_print($count." - CREATED - TVAL: [". $tvalObject->idCadastroVideo ."] - " .$tvalObject->manchete);
+
+            }else{
+
+                $node = Node::load(key($nodeExistente)); 
+                $node->title = $tvalObject->manchete;
+                $node->set('body', $tvalObject->sinopse);
+                $node->body->format = 'full_html';
+                $node->field_idcadastrovideo = $tvalObject->idCadastroVideo;
+                $node->field_reporter = $tvalObject->reporter;
+                $node->field_urlvideo = $tvalObject->urlVideo;
+                $node->field_cinegrafista = $tvalObject->cinegrafista;
+                $node->field_data = $tvalObject->data;
+
+                $dataStr = str_replace("/", "-", $tvalObject->data);
+                $newDate = strtotime($dataStr);
+                $node->setRevisionCreationTime($newDate);
+                $node->changed = $newDate;
+                $node->created = $newDate;
+
+                $node->setNewRevision(TRUE);
+                $node->revision_log = 'Created revision for node' . $nid;
+                $node->setRevisionCreationTime(REQUEST_TIME);
+                $node->promote = 1;
+                $node->save();
+
+                drush_print($count." - UPDATED - TVAL: [". $tvalObject->idCadastroVideo ."] - " .$tvalObject->manchete);
+            }
+        }
+    }
+
+    $dateInit = "CARGA DE CONTEUDO TV - HORA FINAL - ".date("Y-m-d h:i:sa");
+
+    \Drupal::logger('alergs_import')->notice($dateInit);  
+}

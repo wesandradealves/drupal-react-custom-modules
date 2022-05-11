@@ -1,0 +1,23 @@
+{{ attach_library('alergs_agenda/react-app') }}
+{{ attach_library('alergs_agenda/alergs-agenda') }}
+{# Banner custom #}
+{%
+  include '@alergs_custom/paragraphs/paragraph--banner-custom.html.twig' with {
+    bannerTitle: 'Agenda',
+    bannerSubtitle: 'Fique atualizado sobre as atividades realizadas na Assembleia Legislativa do Rio Grande do Sul',
+    bannerImagePath: '/modules/custom/alergs_agenda/img/banner.png',
+    
+  }
+%}
+
+<div>
+	<div id="agenda-component"></div>
+</div>
+
+ <div class="row mt-5 mb-5 p-5 agendaRowDark">
+        <div class="col-sm-12 text-center">
+        <h3>Agenda cultural</h3>
+        <p class="bannerSubtitle m-3">Acompanhe as atividades culturais da Casa no Portal do Departamento de Cultura.</p>
+        <a class="bt-green" href="{{link_cultural}}" target="_blank">Saiba mais</a>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+
+.enviarContribuicao {
+    background-color: #293341;
+    width: 100%;
+    box-sizing: border-box;
+}
+.centralizarTitulo {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+@media (max-width: 900px) {
+    .centralizarTitulo {
+        font-size: 21px;
+    }
+}
+.centralizarBotoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: space-between;
+    width: 370px;
+    flex-wrap: wrap;
+
+    .botaoLinkExterno {
+        width: 48%;
+        padding: 15px;
+        text-align: center;
+        color: #000;
+        margin-top: 20px;
+        background: #fdc100;
+        font-weight: 700;
+        font-size: 14px;
+        border-radius: 15px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+        text-decoration: none;
+        :hover {
+            text-decoration: none;
+            color: #333;
+        }
+        :focus {
+            text-decoration: none;
+            color: #333;
+        }
+    }
+
+    @media (max-width: 900px) {
+        
+        .botaoLinkExterno {
+            padding: 11px;
+            font-size: 11px;
+        }
+    }
+    
+}
+@media (max-width: 420px) {
+    .buttonsContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.otherConsultationsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: start;
+}
+
+.goHomeButton {
+    .botaoLinkExternoMenor {
+        width: 120px;
+        padding: 15px;
+        color: #fff;
+        background-color: #15894f;
+        border-radius: 25px;
+        display: inline-block;
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 40px;
+        text-decoration: none;
+        :hover {
+            text-decoration: none;
+            color: #333;
+        }
+        :focus {
+            text-decoration: none;
+            color: #333;
+        }
+        a {
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .goHomeButton {
+        .botaoLinkExternoMenor {
+            padding: 7px;
+            border-radius: 14px;
+            font-size: 11px;
+        }
+    }
+}
+
+.consultationCarousel {
+    width: 90%;
+    .consultationCard {
+        width: 100%;
+        .label {
+            color: #333333;
+        }
+    }
+}
+
+.selected {
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+}

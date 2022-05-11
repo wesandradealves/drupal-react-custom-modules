@@ -1,0 +1,112 @@
+{{ attach_library('alergs_comissoes/apresentacao') }}
+{{ attach_library('alergs_comissoes/agenda') }}
+{{ attach_library('alergs_comissoes/composicao') }}
+
+{# Banner custom #}
+{%
+  include '@alergs_custom/paragraphs/paragraph--banner-custom.html.twig' with {
+    bannerTitle: comissao.nomeComissao,
+    bannerSubtitle: '',
+    bannerImagePath: '/sites/default/files/static/banner-custom.jpg',
+    bannerStatusComissao: comissao.statusComissao,
+  }
+%}
+
+{# Menu Interno #}
+{{ drupal_view("menu_interno", "block_2", "comissoes-parlamentares/*", id) }}
+
+{# Comissões Parlamentares: Apresentação #}
+<div id="comissoes-parlamentares-detalhes" class="p-5 clearfix">
+	<div class="apresentacao">
+		<h2 class="text-center">Apresentação</h2>
+		{{ comissao.apresentacaoComissao|raw }}
+	</div>
+</div>
+
+{# Comissões Parlamentares: Histórico #}
+{% if comissao.historicoComissao %}
+	<div id="comissoes-parlamentares-historico" class="p-5 clearfix">
+		<div class="historico">
+			<h2 class="text-center">Histórico</h2>
+			{{ comissao.historicoComissao|raw }}
+		</div>
+	</div>
+{% endif %}
+
+{# Composição: React #}
+<div class="p-5">
+	<div class="clearfix text-center">
+		<h4>Composição</h4>
+    <p>Conheça os deputados que fazem parte desta comissão.</p>
+	</div>
+  <div id="composicao-component"></div>
+</div>
+
+<div class="p-5">
+</div>
+
+{# Histórico de Reuniões #}
+{% if historico_reunioes %}
+	<div id="historico-reunioes" class="p-5 clearfix text-center">
+		<div class="text-center">
+			<h2>Histórico de Reuniões</h2>
+			<p>Confira a a pauta das reuniões da comissão.</p>
+		</div>
+		<div class="container">
+			<div class="row justify-content-center">
+				{% for historico_reuniao in historico_reunioes %}
+					<div class="col-12 col-md-4">
+						<div class="apresentacao-row">
+							<div class="apresentacao-date">
+								<img src="/themes/custom/alergs_custom/image/calendario-branco.png" title="Calendário" alt="ícone de calendário"/>
+								<p>{{ historico_reuniao.dthInicioReuniao }}</p>
+							</div>
+							<div class="apresentacao-time">
+								<img src="/themes/custom/alergs_custom/image/relogio.png" title="Relógio" alt="ícone de Relógio"/>
+								<p>{{ historico_reuniao.horaInicioReuniao }}</p>
+							</div>
+						</div>
+						<div class="apresentacao-row apresentacao-assunto">
+							<p>Asssunto:
+								{{ historico_reuniao.descricao }}</p>
+						</div>
+						<div class="apresentacao-row">
+							<img src="/themes/custom/alergs_custom/image/local.png" title="Local" alt="ícone de Localização"/>
+							<p>{{ historico_reuniao.nomeLocal }}</p>
+						</div>
+						<div class="apresentacao-row">
+							<a class="apresentacao-link" target="_blank" href="{{ historico_reuniao.urlTexto }}">
+								<img src="/themes/custom/alergs_custom/image/icon-arrow-right-white.png" title="Direita" alt="Seta para a direita"/>
+								PAUTA
+							</a>
+						</div>
+						<div class="apresentacao-row">
+							<a class="apresentacao-link" target="_blank" href="{{ historico_reuniao.urlAditamento }}">
+								<img src="/themes/custom/alergs_custom/image/icon-arrow-right-white.png" title="Direita" alt="Seta para a direita"/>
+								CANCELAMENTO
+							</a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<a href="/historico-de-reunioes">Mais Reuniões</a>
+	</div>
+{% endif %}
+
+{# Agenda: React #}
+<div class="p-5">
+	<div class="clearfix text-center">
+		<h4>
+			Agenda da
+			{{ comissao.nomeComissao }}
+		</h4>
+		<p>Confira a pausta das reuniões da comissão.</p>
+	</div>
+	<div id="agenda-component"></div>
+</div>
+
+{# Notícias #}
+<div id="noticias" class="clearfix p-5">
+	{{ drupal_view("noticias", "parliamentary_committees") }}
+</div>

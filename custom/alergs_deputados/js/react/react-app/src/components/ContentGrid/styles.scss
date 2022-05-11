@@ -1,0 +1,11 @@
+.MuiPagination-root {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 0 0;   
+    .MuiSvgIcon-root {
+        pointer-events: none;
+    }     
+}
+

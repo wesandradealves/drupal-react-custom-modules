@@ -1,0 +1,57 @@
+@import url('./reset.css');
+
+#main-wrapper {
+    overflow: hidden;
+}
+
+.navbarBottomMenu .dropdown-item a {
+    text-decoration: none !important;
+}
+
+.menuInterno {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+body {background-color: #f3f7fc !important;}
+header{background-color: white !important;}
+
+footer .row>*,
+header .row>* {
+  width: auto !important;
+}
+
+#deputados-wrapper .view-header {
+    display: none
+}
+
+ header #block-menutopo,
+ header #block-menuacessibilidade,
+ header .navbarTopSeparator {
+     padding: 0 !important
+ }
+
+#deputados-component .menu-interno > *:not(.menu-interno--header) {
+    width: 160px !important;
+    height: 130px;
+    margin: 0 0px !important;
+    flex: 0 0 auto !important;
+}
+
+footer .site-footer__top .region-footer-first .menu {
+    max-width: 250px;
+    min-width: 150px;
+    padding: 0;
+    margin: 0;
+}
+
+.comEnc {
+    float: right;	
+    font-weight: bold;
+    font-family: Roboto;
+    color: red !important;
+    border-radius: 4px;
+    background-color: #d03c0e3b;
+    width: 70px;
+    text-align: center;
+}

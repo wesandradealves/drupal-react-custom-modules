@@ -1,0 +1,253 @@
+// .bannerSection {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     width: 100%;
+//     position: relative;
+//     &::after {
+//         position:absolute;
+//         z-index:-1;
+//         bottom:0;
+//         left:0;
+//         width:100%;
+//         height:170px;
+//         content:"";
+//         // background-color:#f3f7fc;
+//       }
+//     .bannerImage {
+//         width: 90%;
+//         height: 300px;
+//         object-fit: cover;
+//         position: relative;
+//     }
+//     .bannerText {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: flex-start;
+//         justify-content: center;
+//         position: absolute;
+//         box-sizing: border-box;
+//         padding: 40px;
+//         width: 90%;
+//         color: white;
+//         height: 300px;
+//         @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+//             top: 0;
+//             left: 10vw;
+//         }
+//         .bannerTitle {
+//             font-size: 40px;
+//             font-family: "Roboto";
+//             font-weight: 700;
+//         }
+//         .bannerSubtitle {
+//             margin-top: 10px;
+//             font-size: 15px;
+//             font-family: "Noto Serif";
+//         }
+//     }
+
+//     @media (max-width: 900px) {
+//         .bannerImage {
+//             width: 100%;
+//             height: 300px;
+//             object-fit: cover;
+//         }
+//         .bannerText {
+//             padding: 20px 40px;
+//             width: 100%;
+//             .bannerTitle {
+//                 font-size: 28px;
+//             }
+//             .bannerSubtitle {
+//                 font-size: 10px;
+//             }
+//         }
+//     }
+// }
+
+.widgetSection {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #293341;
+}
+
+.topTextSection {
+    color: #ffffff;
+}
+
+.menuSection {
+    .menu-interno {
+        background-color: #f3f7fc !important;
+    }
+}
+
+.filtersContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f7fc;
+    box-sizing: border-box;
+    padding: 20px 0 25px 0;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.filterButton:hover {
+    box-shadow: 0px 0px 2px 1px rgb(0 0 0 / 20%);
+}
+.filterButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-sizing: border-box;
+    margin: 0 10px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+    padding: 30px 10px;
+    width: 184px;
+    height: 185px;
+    .filterIcon {
+        max-width: 34px;
+        max-height: 34px;
+    }
+    .filterLabel {
+        margin-top: 10px;
+        text-align: center;
+        color: #293341;
+        font-size: 20px;;
+        font-weight: 700;
+        max-width: 100%;
+        font-family: "Roboto";
+    }
+}
+.selectedFilter {
+    box-shadow: 0px 0px 2px 1px rgb(0 0 0 / 20%);
+}
+
+@media (max-width: 900px) {
+    .filterButton {
+        margin-top: 20px;
+        width: 133px;
+        height: 140px;
+        padding: 30px 10px;
+        .filterLabel {
+            font-size: 14px;
+        }
+        .filterIcon {
+            width: 35px;
+        }
+    }
+}
+.searchResponse {
+    background-color: #293341;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.searchRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 25px 0 35px 0;
+    .searchInput {
+        border-radius: 15px;
+        width: 60%;
+        max-width: 400px;
+        box-sizing: border-box;
+        padding: 0 15px;
+        margin-right: 10px;
+        border: none;
+        font-weight: 500;
+        height: 50px;
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #333333;
+            opacity: 1; /* Firefox */
+          }
+          
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #333333;
+          }
+          
+        &::-ms-input-placeholder { /* Microsoft Edge */
+            color: #333333;
+          }
+    }
+
+    .searchButton {
+        background-color: #15894f;
+        border-radius: 15px;
+        border: none;
+        color: white;
+        box-sizing: border-box;
+        padding: 15px;
+        height: 50px;
+        width: 150px;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 420px) {
+    .searchRow {
+        padding-top: 42px;
+        .searchInput {
+            width: 80%;
+            margin-bottom: 10px;
+            padding: 14px;
+        }
+        .searchButton {
+            padding: 14px;
+            font-size: 11px;
+        }
+    }
+}
+
+.cardsContainer {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+
+    .pageOffset {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        flex-wrap: wrap;
+        background-color: #293341;
+        margin-top: 10px;
+
+        .pageNumber {
+            font-size: 10px;
+            margin: 10px 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .selected {
+            font-size: 14px;
+            font-weight: 800;
+        }
+    }
+    .consultationNotFound {
+        margin-bottom: 50px;
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+        font-family: "Roboto";
+    }
+}

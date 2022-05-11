@@ -1,0 +1,142 @@
+html, body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.2em;
+}
+
+#page-numbers {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#page-numbers > li {
+  margin-right: 0.3em;
+  color: #293341;
+  user-select: none;
+  cursor: pointer;
+}
+
+#page-numbers > li.active {
+  color: #16854F;
+  border-bottom: none;
+}
+
+.reunioes-container {
+  background-color: #293341;
+  padding: 0 0 50px 0;
+  margin: 0 0 50px 0;
+}
+
+.reunioes-container > div {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.reunioes-container >div >h2 {
+  font-family: "Noto Serif";
+  font-weight: bold;
+  font-size: 30px;
+  color: #FFFFFF;
+  padding: 50px 0 35px 0;
+  margin: 0;
+}
+
+#historico-reunioes-component {
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 50px 30px 50px;
+}
+
+#historico-reunioes-component >div >select {
+  display: flex;
+  margin: 0 auto 40px auto;
+  padding: 15px 80px 15px 20px;
+  border-radius: 20px;
+}
+
+.group-title {
+  font-family: "Noto Serif";
+  font-weight: bold;
+  font-size: 20px;
+  margin: 35px 0 0 0;
+}
+
+.group-title span {
+  text-transform: capitalize;
+}
+
+.reunioes-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.reunioes-list-item {
+  background-color: #f3f7fc;
+  border-radius: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 35px 10px 45px;
+  margin: 35px 0 0 0;
+}
+
+.reunioes-list-item .text-container {
+  flex-wrap: wrap;
+  display: inline-flex;
+  font-family: "Noto Serif";
+  font-size: 15px;
+  max-width: 500px;
+}
+
+.reunioes-list-item .text-container p {
+  margin: 0 5px 0 0;
+}
+
+.reunioes-list-item .badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 355px;
+}
+
+.reunioes-list-item .badges-container .reunioes-badge {
+  background-color: #15894F;
+  border-radius: 960px;
+  padding: 10px 25px;
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 3px 5px 3px 5px;
+}
+
+.block-redessociais {
+  display: none;
+}
+
+@media (max-width: 1070px) {
+  .reunioes-list-item .badges-container {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 900px) {
+  #historico-reunioes-component {
+    padding: 60px 20px;
+  }
+
+  #historico-reunioes-component >div >select {
+    padding: 15px 20px 15px 20px;
+  }
+
+  .reunioes-list-item {
+    flex-direction: column;
+  }
+
+  .reunioes-list-item .badges-container {
+    justify-content: center;
+    margin-top: 15px;
+  }
+}

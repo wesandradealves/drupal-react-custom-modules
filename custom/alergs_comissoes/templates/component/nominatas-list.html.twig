@@ -1,0 +1,35 @@
+<div id="nominatas-list" class="container">
+
+	{% for key, nominata in nominatas %}
+
+		{% if key == 'Presidente' or key == 'Vice-Presidente' %}
+			<div class="nominatas d-flex justify-content-lg-around flex-wrap mb-5" data-group="{{ key }}">
+			{% else %}
+				<div class="nominatas d-flex justify-content-lg-start flex-wrap mb-5" data-group="{{ key }}">
+				{% endif %}
+
+				{% for value in nominata %}
+
+					<div class="text-center nominata mr-3">
+
+						{# <div style="background-image: url('{{ value.linkFotoDeputado }}');"></div> #}
+
+						<div class="d-block deputado-image" data-image="{{ value.linkFotoDeputado }}" data-style="background-image: url('{{ value.linkFotoDeputado }}');">
+							<img src="{{ value.linkFotoDeputado }}" alt="" class="">
+						</div>
+
+						<div class="d-block m-3">
+							<span>{{ value.descricaoCargoComissao }}</span>
+							<h4>{{ value.nomeDeputado }}</h4>
+							<span>{{ value.siglaBancada }}</span>
+						</div>
+
+					</div>
+
+				{% endfor %}
+
+			</div>
+
+		{% endfor %}
+
+	</div>

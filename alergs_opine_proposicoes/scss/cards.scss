@@ -1,0 +1,63 @@
+.container-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f7fc;
+    box-sizing: border-box;
+    padding: 22px;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .cardTitle {
+        font-size: 18px;
+        font-weight: 700;
+        color: #333333;
+    }
+
+    @media (max-width: 900px) {
+        padding: 18px;
+        .loginTitle {
+            font-size: 21px;
+        }
+    }
+    .container-cards-items {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: #f3f7fc;
+        box-sizing: border-box;
+        padding: 22px;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .cardButton {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: white;
+            box-sizing: border-box;
+            width: 126px;
+            margin: 0 20px;
+            padding: 28px 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+
+            .icon {
+                height: 42px;
+            }
+
+            .cardLabel {
+                margin-top: 10px;
+                text-align: center;
+                color: #333333;
+                font-size: 14px;
+                font-weight: 700;
+                text-decoration: none;
+            }
+        }
+    }
+}

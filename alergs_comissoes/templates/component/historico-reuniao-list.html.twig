@@ -1,0 +1,27 @@
+{% if historico_reunioes %}
+
+	{% for key, historico_reuniao in historico_reunioes %}
+
+		<p><b>Assunto</b>: {{ historico_reuniao.descricao }}</p>
+		<p><b>Data</b>: {{ historico_reuniao.dthPublicacaoAgenda }}</p>
+		<p><b>Horário</b>: {{ historico_reuniao.horaInicioReuniao }}</p>
+		<p><b>Local</b>: {{ historico_reuniao.nomeLocal }}</p>
+
+		{# <p>{{ historico_reuniao.nomeComissao }}</p> #}
+
+		<div class="d-inline">
+			<span class="badge rounded-pill bg-success text-white">{{ (historico_reuniao.urlTexto) ? "Pauta" : "" }}</span>
+			<span class="badge rounded-pill bg-success text-white">{{ (historico_reuniao.urlAta) ? "Ata" : "" }}</span>
+			<span class="badge rounded-pill bg-success text-white">{{ (historico_reuniao.urlTranscricao) ? "Transcrição" : "" }}</span>
+			<span class="badge rounded-pill bg-success text-white">{{ (historico_reuniao.urlAditamento) ? "Atendimento" : "" }}</span>
+			<span class="badge rounded-pill bg-success text-white">{{ (historico_reuniao.urlCancelamento) ? "Cancelamento" : "" }}</span>
+			<span class="badge rounded-pill bg-success text-white">{{ (historico_reuniao.urlRetificacao) ? "Retificação" : "" }}</span>
+		</div>
+
+	{% endfor %}
+
+{% else %}
+
+	Nenhum registro encontrado.
+
+{% endif %}

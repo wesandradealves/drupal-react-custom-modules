@@ -1,0 +1,43 @@
+vendor:
+  css:
+    component:
+      #dist/vendor/vendor.css: { minified: true }
+  js:
+    dist/vendor/vendor.bundle.js: { minified: true }
+
+index:
+  css:
+    component:
+      dist/index/index.css: { minified: true }
+  js:
+    dist/index/index.bundle.js: { minified: true }
+  dependencies:
+    - alergs_opine_proposicoes/vendor
+
+apresentacao:
+  css:
+    component:
+      dist/apresentacao/apresentacao.css: { minified: true }
+      css/apresentacao-custom.css: {}
+  js:
+    dist/apresentacao/apresentacao.bundle.js: { minified: true }
+  dependencies:
+    - alergs_opine_proposicoes/vendor
+
+widget:
+  css:
+    component:
+      dist/widget/widget.css: {minified: true}
+  js:
+    dist/widget/widget.bundle.js: { minified: true }
+  dependencies:
+    - core/drupalSettings
+    - alergs_opine_proposicoes/vendor
+    # - alergs_opine_proposicoes/slick
+
+
+slick:
+  css:
+    component:
+      https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css: { type: external, attributes: { type: "text/css" } }
+      https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css: { type: external, attributes: { type: "text/css" } }

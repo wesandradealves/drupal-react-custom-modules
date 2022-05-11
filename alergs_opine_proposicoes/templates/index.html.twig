@@ -1,0 +1,44 @@
+{{ attach_library('alergs_opine_proposicoes/index') }}
+
+{# Banner custom #}
+{%
+  include '@alergs_custom/paragraphs/paragraph--banner-custom.html.twig' with {
+    bannerTitle: 'Opine sobre as Proposições em andamento',
+    bannerSubtitle: 'Participe do debate, deixe sua opinião sobre as Proposições que estão na Ordem do Dia da Assembleia Legislativa do Rio Grande do Sul',
+    bannerImagePath: '/modules/custom/alergs_opine_proposicoes/img/banner.jpg'
+  }
+%}
+
+<div id="container-opine-proposicoes">
+	<h2 class="text-center m-5">Proposições em Ordem do Dia</h2>
+
+	{# Opine Proposições: React #}
+	<div id="index-component">
+		<p class="text-center">Carregando...</p>
+	</div>
+</div>
+
+
+<div class="container-cards">
+	<h1 class="cardTitle">{{ (userId) ? 'Deslogue de sua conta' : 'Entre para participar' }}</h1>
+
+	<div class="container-cards-items">
+
+		{% if userId %}
+			<a href="/user/logout" class="cardButton">
+				<img src="/modules/custom/alergs_opine_proposicoes/img/logout.png" class="icon" alt="Sair"/>
+				<h1 class="cardLabel">Sair</h1>
+			</a>
+		{% else %}
+			<a href="/user/register" class="cardButton">
+				<img src="/modules/custom/alergs_opine_proposicoes/img/register.png" class="icon" alt="Cadastre-se"/>
+				<h1 class='cardLabel'>Cadastre-se</h1>
+			</a>
+			<a href="/user/login" class="cardButton">
+				<img src="/modules/custom/alergs_opine_proposicoes/img/login.png" class="icon" alt="Login"/>
+				<h1 class='cardLabel'>Login</h1>
+			</a>
+		{% endif %}
+
+	</div>
+</div>

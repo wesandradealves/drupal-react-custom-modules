@@ -1,0 +1,13 @@
+alergs_import.settings:
+  path: '/admin/config/system/alergs_import'
+  defaults:
+    _form: '\Drupal\alergs_import\Form\alergsImportSettingsForm'
+    _title: 'Alergs Web Service'
+  requirements:
+    _permission: 'administer site configuration'
+alergs_import.manchetes:
+  path: "/manchetes/json"
+  defaults:
+    _controller: 'Drupal\alergs_import\Controller\Manchetes::content'
+  requirements:
+    _permission: "access content"

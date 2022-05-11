@@ -1,0 +1,14 @@
+alergs-transmissoes:
+  version: 1.x
+  css:
+    layout:
+      css/alergs-transmissoes-layout.css: {}
+    theme:
+      css/alergs-transmissoes-theme.css: {}
+  js:
+    js/alergs-transmissoes.js: {}
+
+react-app:
+  version: 1.x
+  js:
+    js/react/react-app/dist/app.bundle.js: { minified: true }

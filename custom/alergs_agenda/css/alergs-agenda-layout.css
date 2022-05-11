@@ -1,0 +1,26 @@
+
+.agendaRowDark{background: #293341;color:#fff}
+.agendaRowDark h3{font-weight: bold;}
+
+.bt-green{
+    display: inline-block;
+    padding:20px 30px; 
+    color: #fff; 
+    text-transform: uppercase; 
+    font-weight: bold;
+    border-radius: 30px;
+    background: #15894f;
+    font-size:14px 
+}
+.bt-green:hover{color:#fff!important;background: #1da863;}
+.bannerSubtitle {
+		margin-top: 10px;
+		font-size: 14px;
+		font-family: "Noto Serif";
+}
+
+#block-views-block-noticias-block-agenda .filters-section{display: none;}
+
+.agendaEventosItemLoc a{
+    color: #0090e4 !important;
+}

@@ -1,0 +1,29 @@
+{{ attach_library('alergs_comissoes/react-cdn') }}
+{{ attach_library('alergs_comissoes/publicacoes-relatorios') }}
+
+{%
+  include '@alergs_custom/paragraphs/paragraph--banner-custom.html.twig' with {
+    bannerTitle: comissao.nomeComissao,
+    bannerStatusComissao: comissao.statusComissao,
+    bannerImagePath: '/sites/default/files/static/banner-custom.jpg',
+  }
+%}
+
+{{ drupal_view("menu_interno", "block_2", "comissoes-parlamentares/*", idComissao) }}
+
+<div class="text-center conteudo-container">
+
+  <div>
+		<h2>Publicações</h2>
+		<div id="publicacoes-component"><span class="loading">Carregando...</span></div>
+  </div>
+
+  <div>
+		<h2>Relatórios</h2>
+    <div id="relatorios-component"><span class="loading">Carregando...</span></div>
+	</div>
+
+</div>
+
+{# Noticias #}
+{{ drupal_view("noticias", "parliamentary_committees") }}

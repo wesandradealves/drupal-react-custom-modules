@@ -1,0 +1,14 @@
+alergs-ouvidoria:
+  version: 1.x
+  css:
+    layout:
+      css/alergs-ouvidoria-layout.css: {}
+    theme:
+      css/alergs-ouvidoria-theme.css: {}
+  js:
+    js/alergs-ouvidoria.js: {}
+
+react-app:
+  version: 1.0
+  js:
+    js/react/react-app/dist/app.bundle.js: { minified: true }

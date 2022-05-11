@@ -1,0 +1,91 @@
+#page-numbers {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#page-numbers > li {
+  color: white;
+  margin: 25px 0 0 0;
+  user-select: none;
+  cursor: pointer;
+}
+
+#page-numbers > li.active {
+  border-bottom: none;
+  color: #16854F;
+}
+
+.loading {
+  color: #FFFFFF;
+}
+
+.conteudo-container {
+  background-color: #293341;
+  margin: 0 0 50px 0;
+}
+
+.conteudo-container > div {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.conteudo-container h2 {
+  font-family: "Roboto";
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 30px;
+  padding: 50px 0 35px 0;
+  margin: 0;
+}
+
+.conteudo-lista {
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 50px;
+}
+
+.conteudo-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f3f7fc;
+  padding: 20px 40px;
+  border-radius: 30px;
+  margin: 0 0 10px 0;
+}
+
+.conteudo-item p {
+  font-family: "Roboto";
+  font-weight: 500;
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.conteudo-item .bd-highlight img {
+  height: 40px;
+  margin: 4px 0;
+}
+
+#publicacoes-component >div >p, #relatorios-component >div >p {
+  font-family: "Noto Serif";
+  color: #FFFFFF;
+  font-size: 16px;
+  padding: 0 0 45px 0;
+  margin: 0;
+}
+
+.block-redessociais {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .conteudo-lista {
+    padding: 40px 30px;
+  }
+
+  .conteudo-item {
+    flex-direction: column;
+  }
+}

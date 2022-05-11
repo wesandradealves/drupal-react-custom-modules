@@ -1,0 +1,20 @@
+alergs_transmissoes.transmissoes:
+  path: '/tval/transmissoes'
+  defaults:
+    _controller: '\Drupal\alergs_transmissoes\Controller\TransmissoesController::content'
+    _title: 'Transmissões'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_transmissoes.transmissao:
+  path: '/tval/transmissoes/{id}'
+  defaults:
+    _controller: '\Drupal\alergs_transmissoes\Controller\TransmissoesController::content'
+    _title: 'Transmissões'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+

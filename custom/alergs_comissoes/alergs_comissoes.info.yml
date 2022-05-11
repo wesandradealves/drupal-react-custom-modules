@@ -1,0 +1,5 @@
+name: 'Alergs Comissões'
+type: module
+description: 'Custom module for Alergs Comissões Parlamentares'
+core_version_requirement: ^8.8 || ^9
+package: ALERGS

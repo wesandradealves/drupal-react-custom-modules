@@ -1,0 +1,107 @@
+<?php
+
+use Drupal\alergs_comissoes\Service\NominataService;
+
+/**
+ * @file
+ * Contains alergs_comissoes.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function alergs_comissoes_theme($existing, $type, $theme, $path)
+{
+  return [
+
+    'alergs_comissoes_comissoes_parlamentares' => [
+      'render element' => 'children',
+      'template' => 'comissoes-parlamentares',
+      'path' => $path . '/templates',
+    ],
+
+    'alergs_comissoes_apresentacao' => [
+      'render element' => 'children',
+      'template' => 'apresentacao',
+      'path' => $path . '/templates',
+      'variables' => [
+        'id' => NULL,
+        'comissao' => NULL,
+        'historico_reunioes' => NULL,
+      ],
+    ],
+
+    'alergs_comissoes_historico_reunioes' => [
+      'render element' => 'children',
+      'template' => 'historico-reunioes',
+      'path' => $path . '/templates',
+      'variables' => [
+        'id' => NULL,
+        'comissao' => NULL,
+        'historico_reunioes_form' => NULL,
+      ],
+    ],
+
+    'alergs_comissoes_historico_reunioes_list' => [
+      'render element' => 'children',
+      'template' => 'component/historico-reunioes-list',
+      'path' => $path . '/templates',
+      'variables' => [
+        'historico_reunioes' => NULL
+      ],
+    ],
+
+    'alergs_comissoes_publicacoes_relatorios' => [
+      'render element' => 'children',
+      'template' => 'publicacoes-relatorios',
+      'path' => $path . '/templates',
+      'variables' => [
+        'idComissao' => NULL,
+        'comissao' => NULL,
+        'publicacoes' => NULL,
+        'relatorios' => NULL,
+      ],
+    ],
+
+    'alergs_comissoes_presencas' => [
+      'render element' => 'children',
+      'template' => 'presencas',
+      'path' => $path . '/templates',
+      'variables' => [
+        'id' => NULL,
+        'comissao' => NULL,
+        'presencas' => NULL,
+        'presencas_form' => NULL
+      ],
+    ],
+
+    'alergs_comissoes_presencas_list' => [
+      'render element' => 'children',
+      'template' => 'component/presencas-list',
+      'path' => $path . '/templates',
+      'variables' => [
+        'pager' => NULL
+      ],
+    ],
+
+    'alergs_comissoes_nominatas' => [
+      'render element' => 'children',
+      'template' => 'nominatas',
+      'path' => $path . '/templates',
+      'variables' => [
+        'comissoes' => NULL,
+        'nominatasForm' => NULL
+      ],
+    ],
+
+    'alergs_comissoes_nominatas_list' => [
+      'render element' => 'children',
+      'template' => 'component/nominatas-list',
+      'path' => $path . '/templates',
+      'variables' => [
+        'nominatas' => NULL
+      ],
+    ],
+
+  ];
+}

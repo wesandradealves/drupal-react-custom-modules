@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Contains alergs_institucional.module.
+ */
+
+use Drupal\Core\Controller\ControllerBase;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use \Drupal\user\Entity\User;
+
+
+
+/**
+ * Implements hook_theme().
+ */
+function alergs_institucional_theme($existing, $type, $theme, $path) {
+
+  return [		
+    'alergs_mesa_diretora' => [
+      'render element' => 'children',
+      'template' => 'mesadiretora',
+      'path' => $path . '/templates',
+      'variables' => [
+        'user_name' => [],
+      ],
+    ],
+  ];
+
+  return [		
+    'alergs_projetos_apreciados' => [
+      'render element' => 'children',
+      'template' => 'projetosapreciados',
+      'path' => $path . '/templates',
+      'variables' => [
+        'user_name' => [],
+      ],
+    ],
+  ];
+
+}

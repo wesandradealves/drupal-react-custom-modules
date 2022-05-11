@@ -1,0 +1,24 @@
+.detailsSection {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  margin: 20px auto;
+  padding: 50px 0px;
+
+  .detailsTitle {
+
+  }
+
+  .detailsApresentacao {
+    img {
+      display: none;
+    }
+  }
+
+  .detailsHistorico {
+  }
+}

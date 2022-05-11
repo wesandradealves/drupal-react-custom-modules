@@ -1,0 +1,14 @@
+alergs-deputados:
+  version: 1.x
+  css:
+    layout:
+      css/alergs-deputados-layout.css: {}
+    theme:
+      css/alergs-deputados-theme.css: {}
+  js:
+    js/alergs-deputados.js: {}   
+
+react-app:
+  version: 1.x
+  js:
+    js/react/react-app/dist/app.bundle.js: { minified: true }

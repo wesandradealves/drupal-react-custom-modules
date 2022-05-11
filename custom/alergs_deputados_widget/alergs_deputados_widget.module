@@ -1,0 +1,23 @@
+<?php
+/**
+ * @file
+ * Contains alergs_deputados_widget.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function alergs_deputados_widget_theme($existing, $type, $theme, $path)
+{
+  return [
+    // Form newsletter
+    'alergs_deputados_widget_widget_block' => [
+      'render element' => 'children',
+      'template' => 'widget-block',
+      'path' => $path . '/templates',
+      'variables' => [
+        'variable' => NULL
+      ],
+    ],
+  ];
+}

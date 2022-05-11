@@ -1,0 +1,6 @@
+alergs_ouvidoria.admin_settings_form:  
+  title: 'Configurar conteúdo de Ouvidoria'  
+  route_name: alergs_ouvidoria.config_form  
+  description: 'Configurar conteúdo de Ouvidoria'  
+  parent: system.admin_config_system  
+  weight: 99  

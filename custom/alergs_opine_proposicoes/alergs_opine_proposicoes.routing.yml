@@ -1,0 +1,29 @@
+alergs_opine_proposicoes.index:
+  path: 'opine'
+  defaults:
+    _controller: '\Drupal\alergs_opine_proposicoes\Controller\OpineProposicoesController::index'
+    _title: 'Opine'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_opine_proposicoes.apresentacao:
+  path: 'opine/{siglaTipoProposicao}/{nroProposicao}/{anoProposicao}'
+  defaults:
+    _controller: '\Drupal\alergs_opine_proposicoes\Controller\OpineProposicoesController::apresentacao'
+    _title: 'Opine'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_opine_proposicoes.get_name:
+  path: 'api/opine-proposicoes/user'
+  defaults:
+    _controller: '\Drupal\alergs_opine_proposicoes\Controller\UserController::getName'
+    _title: 'GetName'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'

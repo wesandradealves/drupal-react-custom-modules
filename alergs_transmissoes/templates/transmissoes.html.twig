@@ -1,0 +1,49 @@
+{{ attach_library('alergs_transmissoes/react-app') }}
+{{ attach_library('alergs_transmissoes/alergs-transmissoes') }}
+
+{% block main_content %}
+	{% if id %}
+		{{ drupal_view('banner_principal', 'block_1') }}
+		<div class="cards-section">
+			<a class="tvalNoticiasCard" href="/tval">
+				<img class="tvalNoticiasImage" src="/themes/custom/alergs_custom/image/noticias.png" alt="user-icon"/>
+				<h2 class="tvalNoticiasLabel">Início</h2>
+			</a>
+			<a class="tvalNoticiasCard" href="/tval#sintonise-block">
+				<img class="tvalNoticiasImage" src="/themes/custom/alergs_custom/image/noticias.png" alt="user-icon"/>
+				<h2 class="tvalNoticiasLabel">Sintonize a TV AL</h2>
+			</a>
+			<a class="tvalNoticiasCard" href="/tval/programas" id="programas-navigation-button">
+				<img class="tvalNoticiasImage" src="/themes/custom/alergs_custom/image/deputados.png" alt="user-icon"/>
+				<h2 class="tvalNoticiasLabel">Programas</h2>
+			</a>
+			<a class="tvalNoticiasCard" href="/tval/transmissoes">
+				<img class="tvalNoticiasImage" src="/themes/custom/alergs_custom/image/tval.png" alt="user-icon"/>
+
+				<h2 class="tvalNoticiasLabel">Transmissões</h2>
+			</a>
+			<a class="tvalNoticiasCard" href="/tval#equipe-block">
+				<img class="tvalNoticiasImage" src="/themes/custom/alergs_custom/image/artigos.png" alt="user-icon"/>
+				<h2 class="tvalNoticiasLabel">Equipe</h2>
+			</a>
+		</div
+		<section>
+			<div data-id="{{ id }}" id="transmissoes-component"></div>
+			<div class="transmissoes-component-footer">
+				<div class="container">
+					<a onclick="history.back()" href="javascript:void(0)">Voltar</a>
+					<div>
+						<p>Compartilhar</p> {{ drupal_block("social_sharing_buttons_block") }}
+					</div>
+				</div>
+			</div>
+		</section>	
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	{% else %}
+		<section>
+			<div id="transmissoes-component"></div>
+		</section>	
+	{% endif %}
+{% endblock %}

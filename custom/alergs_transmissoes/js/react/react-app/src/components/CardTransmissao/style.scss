@@ -1,0 +1,58 @@
+.cardTrasmissao {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	background-color: #f3f7fc;
+	border-radius: 20px;
+	margin-bottom: 10px;
+	padding: 20px;
+
+	.tipoTrasmissao {
+		color: white;
+		text-align: center;
+		box-sizing: border-box;
+		padding: 8px;
+		background-color: #293341;
+		h3 {
+			font-size: 16px;
+			margin: 0%;
+		}
+	}
+	
+	.titulo {
+		font-size: 18px;
+		font-weight: 700;
+		margin-top: 10px;
+	}
+	.infoRow {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		margin-top: 10px;
+		.labeledIcon {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			margin-right: 10px;
+			.icon {
+				height: 16px;
+				margin-right: 5px;
+			}
+			.label {
+				font-size: 12px;
+			}
+		}
+	}
+
+	.trasmissaoURL {
+		color: #15894F;
+		text-decoration: underline;
+		margin-top: 10px;
+		font-size: 14px;
+	}
+
+}

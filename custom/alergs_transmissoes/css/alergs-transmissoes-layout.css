@@ -1,0 +1,104 @@
+.transmissoes-component-footer {
+    background-color: #F3F7FC;
+    margin-bottom: 30px;    
+}
+
+.transmissoes-component-footer > .container {
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    columns: #293341;
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+.transmissoes-component-footer a,
+.transmissoes-component-footer > .container {
+    color: inherit;
+}
+
+.transmissoes-component-footer > .container, .transmissoes-component-footer > .container div {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;    
+}
+
+.transmissoes-component-footer > .container div p {
+    margin: 0;
+}
+
+.transmissoes-component-footer .social-sharing-buttons {
+    padding: 0;
+    margin: 0;
+}
+
+.transmissoes-component-footer .social-sharing-buttons__button svg {
+    height: auto !important;
+    width: 25px !important;
+}
+
+@media only screen and (min-width: 1336px) {
+    .transmissoes-component-footer > .container {
+        padding-left: 110px;
+        padding-right: 110px;
+    }    
+}   
+
+.cards-section {
+	width: 100%;
+	padding: 20px 40px;
+    display: flex;
+	flex-direction: row;
+    justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+    background-color: #f3f7fc;
+}
+
+.tvalNoticiasCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 133px;
+    height: 140px;
+	margin: 20px 20px;
+	box-sizing: border-box;
+	background-color: white;
+	border-radius: 20px;
+	color: #333;
+	text-decoration: none;
+	cursor: pointer;
+	font-weight: 700;
+	position: relative;
+	float: left;
+}
+.tvalNoticiasCard h2{
+	font-weight: 700;
+}
+
+@media (max-width: 900px) {
+	.tvalNoticiasCard {
+		margin-bottom: 10px;
+	}
+}
+.tvalNoticiasCard:hover {
+	text-decoration: none;
+	color: #333;
+	box-shadow: 0px 0px 2px 1px rgb(0 0 0 / 20%);
+}
+
+.tvalNoticiasCard:focus {
+	text-decoration: none;
+	color: #333;
+}
+
+.tvalNoticiasImage {
+	height: 35px;
+	margin-top: 30px
+}
+.tvalNoticiasLabel {
+	font-size: 14px;
+	text-align: center;
+	margin-top: 10px;
+	padding: 0 10px;
+}

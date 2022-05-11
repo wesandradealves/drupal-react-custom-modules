@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function alergs_opine_proposicoes_theme($existing, $type, $theme, $path)
+{
+  return [
+    'alergs_opine_proposicoes_index' => [
+      'render element' => 'children',
+      'template' => 'index',
+      'path' => $path . '/templates',
+      'variables' => [
+        'userId' => NULL
+      ],
+    ],
+
+    'alergs_opine_proposicoes_apresentacao' => [
+      'render element' => 'children',
+      'template' => 'apresentacao',
+      'path' => $path . '/templates',
+      'variables' => [
+        'userId' => NULL,
+        'proposicao' => NULL,
+        'legislacao' => NULL,
+        'votosProposicao' => NULL
+      ],
+    ],
+
+    'alergs_opine_proposicoes_widget' => [
+      'render element' => 'children',
+      'template' => 'widget',
+      'path' => $path . '/templates',
+      'variables' => [
+        'variable' => NULL
+      ],
+    ],
+  ];
+}

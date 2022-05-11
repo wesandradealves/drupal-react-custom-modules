@@ -1,0 +1,61 @@
+alergs_comissoes.comissoes_parlamentares:
+  path: 'comissoes-parlamentares'
+  defaults:
+    _controller: '\Drupal\alergs_comissoes\Controller\ComissoesParlamentaresController::index'
+    _title: 'Comissões Parlamentares'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_comissoes.apresentacao:
+  path: 'comissoes-parlamentares/{id}'
+  defaults:
+    _controller: '\Drupal\alergs_comissoes\Controller\ComissoesParlamentaresController::apresentacao'
+    _title: 'Apresentação | Comissões Parlamentares'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_comissoes.comissoes_parlamentares_historico_reunioes:
+  path: 'comissoes-parlamentares/{id}/historico-de-reunioes'
+  defaults:
+    _controller: '\Drupal\alergs_comissoes\Controller\ComissoesParlamentaresController:historicoReunioes'
+    _title: 'Histórico de Reuniões | Comissões Parlamentares'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_comissoes.comissoes_parlamentares_publicacoes_relatorios:
+  path: 'comissoes-parlamentares/{id}/publicacoes-e-relatorios'
+  defaults:
+    _controller: '\Drupal\alergs_comissoes\Controller\ComissoesParlamentaresController:publicacoesRelatorios'
+    _title: 'Publicações e Relatórios | Comissões Parlamentares'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_comissoes.presencas:
+  path: 'comissoes-parlamentares/{id}/presencas'
+  defaults:
+    _controller: '\Drupal\alergs_comissoes\Controller\ComissoesParlamentaresController::presencas'
+    _title: 'Presenças | Comissões Parlamentares'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_comissoes.nominatas:
+  path: 'nominatas'
+  defaults:
+    _controller: '\Drupal\alergs_comissoes\Controller\NominatasController::getAll'
+    _title: 'Nominatas'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+

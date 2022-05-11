@@ -1,0 +1,153 @@
+{{ attach_library('alergs_opine_proposicoes/apresentacao') }}
+
+{# Banner custom #}
+{%
+  include '@alergs_custom/paragraphs/paragraph--banner-custom.html.twig' with {
+    bannerTitle: proposicao.proposicao,
+    bannerSubtitle: proposicao.proponente,
+    bannerImagePath: '/modules/custom/alergs_opine_proposicoes/img/banner.jpg'
+  }
+%}
+
+{# <div class="detalhe-proposicao">
+	<h2 class="text-center m-5">Detalhes da proposição</h2>
+</div> #}
+
+<div class="opine-votacao">
+	<div>
+		<div class="detalhe-proposicao">
+			<h2 class="text-center m-5">Detalhes da Proposição</h2>
+		</div>
+
+		<div class="view-opine-votacao">
+		<div class="responsive-table">
+			<table>
+				<thead>
+					<tr>
+						<th>Proposição</th>
+						<th>Proponente</th>
+						<th>Texto</th>
+						<th>Justificativa</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{ proposicao.proposicao }}</td>
+						<td>{{ proposicao.proponente }}</td>
+						<td>
+							{% if proposicao.linkTexto %} 
+								<div class="visualizar-documento">
+									<span>Visualizar Documento</span>
+									<a href="{{ proposicao.linkTexto }}" target="_blank">
+										<img id="searchImage" src="/themes/custom/alergs_custom/image/busca.png" style="padding: 0px">
+									</a>
+								</div>
+							{% endif %}
+						</td>
+						<td>
+							{% if proposicao.linkJustificativa %}
+								<div class="visualizar-documento">
+									<span>Visualizar Documento</span>
+									<a href="{{ proposicao.linkJustificativa }}" target="_blank">
+										<img id="searchImage" src="/themes/custom/alergs_custom/image/busca.png" style="padding: 0px">
+									</a>
+								</div>
+							{% endif %}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		</div>
+
+		<div class="view-opine-votacao">
+			<div class="view-opine-votacao-table3">
+			<div class="responsive-table">
+				<table>
+					<thead>
+						<tr>
+							<th>Situação em</th>
+							<th>Tramitação</th>
+							<th>Legislação</th>
+							<th>Número de processo</th>
+							<th>Votação</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							{# TODO: Slice the dataSituacaoProposicao  #}
+							<td>{{ proposicao.descricaoSituacao ~ ' em ' ~ proposicao.dataSituacaoProposicao|slice(0, 10) }}</td>
+							<td>{{ proposicao.tramitacao }}</td>
+							<td>{{'Tipo: ' ~ legislacao.nomeLegislacao ~ ' ' ~ legislacao.numLegislacao }}</td>
+							<td>{{ proposicao.numeroProcesso }}</td>
+							{# TODO: Use JSON:API to get user name #}
+							<td>
+								{% if votosProposicao %}
+									Sim:
+									<strong>{{ votosProposicao.sim }}</strong>
+									Não:
+									<strong>{{ votosProposicao.nao }}</strong>
+								{% endif %}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div>
+		</div>
+
+		<div class="view-opine-votacao">
+			<div class="view-opine-votacao-table2">
+				<table>
+					<thead>
+						<tr>
+							<th>Assunto</th>
+							<th>Ementa</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{ proposicao.assunto }}</td>
+							<td>{{ proposicao.ementa }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+{# <h2>Participe da Votação!</h2>
+<img src="/modules/custom/alergs_opine_proposicoes/img/file.png" alt=""/>
+{{proposicao.proposicao}}
+
+<img src="/modules/custom/alergs_opine_proposicoes/img/user.png" alt=""/>
+{{proposicao.proponente}}
+
+<img src="/modules/custom/alergs_opine_proposicoes/img/calendar.png" alt=""/>
+{{proposicao.dataSituacaoProposicao|slice(0, 10)}} #}
+
+{# Opine: Votação Component #}
+<div id="apresentacao-component"></div>
+
+<div class="container-cards">
+	<h1 class="cardTitle">{{ (userId) ? 'Deslogue de sua conta' : 'Entre para participar' }}</h1>
+	<div class="container-cards-items">
+		{% if userId %}
+			<a href="/user/logout" class="cardButton">
+				<img src="/modules/custom/alergs_opine_proposicoes/img/logout.png" class="icon" alt="Sair"/>
+				<h1 class="cardLabel">Sair</h1>
+			</a>
+		{% else %}
+			<a href="/user/register" class="cardButton">
+				<img src="/modules/custom/alergs_opine_proposicoes/img/register.png" class="icon" alt="Cadastre-se"/>
+				<h1 class='cardLabel'>Cadastre-se</h1>
+			</a>
+			<a href="/user/login" class="cardButton">
+				<img src="/modules/custom/alergs_opine_proposicoes/img/login.png" class="icon" alt="Login"/>
+				<h1 class='cardLabel'>Login</h1>
+			</a>
+		{% endif %}
+	</div>
+</div>

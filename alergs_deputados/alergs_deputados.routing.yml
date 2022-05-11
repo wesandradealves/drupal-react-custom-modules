@@ -1,0 +1,110 @@
+alergs_deputados.deputados:
+  path: '/deputados'
+  defaults:
+    _controller: '\Drupal\alergs_deputados\Controller\DeputadosController::content'
+    _title: 'Deputados'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_deputados.deputado:
+  # This path takes dynamic arguments, which are enclosed in { }.
+  path: '/deputados/{id}'
+  defaults:
+    # This route returns a Response object so also uses _controller
+    _controller: '\Drupal\alergs_deputados\Controller\DeputadosController::content'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_deputados.comissoes:
+  # This path takes dynamic arguments, which are enclosed in { }.
+  path: '/comissoes/{id}'
+  defaults:
+    # This route returns a Response object so also uses _controller
+    _controller: '\Drupal\alergs_deputados\Controller\ComissoesController::content'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_deputados.proposicoes:
+  # This path takes dynamic arguments, which are enclosed in { }.
+  path: '/proposicoes/{id}'
+  defaults:
+    # This route returns a Response object so also uses _controller
+    _controller: '\Drupal\alergs_deputados\Controller\ProposicoesController::content'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'    
+
+# 
+alergs_deputados.proposicao:
+  # This path takes dynamic arguments, which are enclosed in { }.
+  path: '/proposicoes/{uid}/{id}'
+  defaults:
+    # This route returns a Response object so also uses _controller
+    _controller: '\Drupal\alergs_deputados\Controller\ProposicoesController::content'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'    
+# 
+
+alergs_deputados.pronunciamentos:
+  # This path takes dynamic arguments, which are enclosed in { }.
+  path: '/pronunciamentos/{id}'
+  defaults:
+    # This route returns a Response object so also uses _controller
+    _controller: '\Drupal\alergs_deputados\Controller\PronunciamentosController::content'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_deputados.contato:
+  # This path takes dynamic arguments, which are enclosed in { }.
+  path: '/contato/{id}'
+  defaults:
+    # This route returns a Response object so also uses _controller
+    _controller: '\Drupal\alergs_deputados\Controller\ContatoController::content'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_deputados.pronunciamento:
+  # This path takes dynamic arguments, which are enclosed in { }.
+  path: '/pronunciamentos/{uid}/{id}'
+  defaults:
+    # This route returns a Response object so also uses _controller
+    _controller: '\Drupal\alergs_deputados\Controller\PronunciamentosController::content'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_deputados.imprensa:
+  # This path takes dynamic arguments, which are enclosed in { }.
+  path: '/imprensa/{id}'
+  defaults:
+    # This route returns a Response object so also uses _controller
+    _controller: '\Drupal\alergs_deputados\Controller\ImprensaController::content'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
+
+alergs_deputados.imprensaTodas:
+  # This path takes dynamic arguments, which are enclosed in { }.
+  path: '/imprensa/{id}/todas'
+  defaults:
+    # This route returns a Response object so also uses _controller
+    _controller: '\Drupal\alergs_deputados\Controller\ImprensaController::content'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'    

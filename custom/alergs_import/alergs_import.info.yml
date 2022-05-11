@@ -1,0 +1,8 @@
+type: module
+name: Alergs Import
+description: 'Custom module for import content from ALERGS web services'
+package: ALERGS
+core_version_requirement: ^8.8 || ^9
+version: '8.x-5.1'
+project: 'alergs_import'
+configure: alergs_import.settings

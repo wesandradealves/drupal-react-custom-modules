@@ -1,0 +1,45 @@
+@import './cards.scss';
+@import './react-paginate.scss';
+
+.myContributions {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px 0 20px;
+
+	.title {
+		font-size: 28px;
+		font-weight: 700;
+		margin-bottom: 20px;
+		color: #333333;
+	}
+
+	.cardsWrapper {
+		width: 90%;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		max-width: 1400px;
+		margin: auto;
+		flex-wrap: wrap;
+	}
+
+	.consultationCarousel {
+		width: 100%;
+	}
+
+	@media (max-width: 900px) {
+		.cardsWrapper {
+			justify-content: center;
+		}
+	}
+
+	@media (max-width: 700px) {
+		.cardsWrapper {
+			justify-content: flex-end;
+		}
+	}
+}

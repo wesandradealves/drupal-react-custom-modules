@@ -1,0 +1,16 @@
+{{ attach_library('alergs_custom/tv_al_destaque') }}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+
+  ]
+%}
+
+{% block paragraph %}
+    <div>
+        <h1>teste de mesa diretora</h1>
+    </div>
+{% endblock paragraph %}

@@ -1,0 +1,14 @@
+alergs-opine:
+  version: 1.x
+  css:
+    layout:
+      css/alergs-opine-layout.css: {}
+    theme:
+      css/alergs-opine-theme.css: {}
+  js:
+    js/alergs-opine.js: {}
+
+react-app:
+  version: 1.x
+  js:
+    js/react/react-app/dist/app.bundle.js: { minified: true }

@@ -1,0 +1,24 @@
+{{ attach_library('alergs_ouvidoria/react-app') }}
+{{ attach_library('alergs_ouvidoria/alergs-ouvidoria') }}
+
+{%
+  include '@alergs_custom/paragraphs/paragraph--banner-custom.html.twig' with {
+    bannerTitle: 'Ouvidoria Parlamentar',
+    bannerSubtitle: 'Ouvidoria da Assembleia Legislativa do Rio Grande do Sul',
+    bannerImagePath: '/sites/default/files/static/banner-custom.jpg',
+    
+  }
+%}
+   
+               
+                <div class="container pt-3 pb-3">
+                    <div id="ouvidoria-component" class="ouvidoria-validar"></div>
+                   
+                    
+                </div>
+
+               
+               
+            
+</div>
+

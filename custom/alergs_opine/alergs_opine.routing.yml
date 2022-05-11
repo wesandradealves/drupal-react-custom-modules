@@ -1,0 +1,9 @@
+alergs_opine.consulta:
+  path: '/consultapublica'
+  defaults:
+    _controller: '\Drupal\alergs_opine\Controller\ConsultaPublicaController::content'
+    _title: 'Consulta Publica'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'

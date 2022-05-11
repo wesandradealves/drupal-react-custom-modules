@@ -1,0 +1,14 @@
+contratosativos:
+  version: 1.x
+  css:
+    layout:
+      css/alergs-contratos-ativos.css: {}
+      css/slick.css: {}
+    theme:
+      css/alergs-contratos-ativos.css: {}
+   
+  js:
+    js/slick.min.js: {}
+    js/alergs-contratos-ativos.js: {}
+  dependencies:
+    - core/jquery  

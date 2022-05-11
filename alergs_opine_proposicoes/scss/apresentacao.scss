@@ -1,0 +1,49 @@
+@import "./cards.scss";
+@import "./react-slick.scss";
+
+#container-comentarios-list {
+  // margin-bottom: 20px;
+
+  .slick-slide img {
+    margin: auto;
+  }
+
+  // Custom bullets
+  .slick-dots {
+    margin-bottom: 25px;
+
+    li {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: 0 5px;
+      padding: 5;
+      cursor: pointer;
+
+      &.slick-active button {
+        opacity: 0.75;
+        background: red;
+      }
+
+      button {
+        font-size: 0;
+        line-height: 0;
+        display: block;
+        width: 15px;
+        height: 15px;
+        padding: 5px;
+        cursor: pointer;
+        // color: transparent;
+        border: 0;
+        outline: none;
+        background: gray;
+        border-radius: 50px;
+
+        &:before {
+          font-family: none;
+        }
+      }
+    }
+  }
+}

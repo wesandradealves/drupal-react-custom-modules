@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains alergs_perguntas_frequentes.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function alergs_perguntas_frequentes_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the alergs_perguntas_frequentes module.
+    case 'help.page.alergs_perguntas_frequentes':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Modulo de controle de perguntas frequentes') . '</p>';
+      return $output;
+
+    default:
+  }
+}

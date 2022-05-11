@@ -1,0 +1,70 @@
+#list {
+    background-color: #323d4d;
+    margin: 0 -15px;
+    .container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        position: relative;
+        h2 {
+            text-align: center;
+        }        
+        .list-header {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background: #f3f7fc;  
+            text-align: center;    
+            padding: 15px 20px;     
+            .list-cell {
+                .list-cell-inner {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .list-content {
+            .list-row {
+                cursor: pointer;
+                .list-cell {
+                    &:not(:only-child):first-child {
+                        border-right: 2px rgba(0,0,0,.1) solid 
+                    }                
+                } 
+            }           
+        }
+        .list-inner {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            @media only screen and (min-width: 800px) {
+                padding: 40px;
+            }    
+            .list-row {
+                border-radius: 10px;
+                padding: 15px 20px;
+                background: #f3f7fc;                  
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+            .list-cell {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                justify-content: center;
+                .list-cell-inner {
+                    color: #323d4d;
+                    // border-radius: 10px;
+                    // background: #f3f7fc;
+                    font-size: .8rem;                 
+                    font-weight: bold; 
+                    // padding: 20px;
+                    width: 100%;
+                    display: block;      
+                }
+            }           
+        }
+    }
+}
+
+.filter .container {
+    padding-top: 0 !important;
+}

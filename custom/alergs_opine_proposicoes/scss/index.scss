@@ -1,0 +1,63 @@
+@import './cards.scss';
+@import './react-paginate.scss';
+
+.container-index {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-item {
+    box-sizing: border-box;
+    padding: 20px;
+    width: calc(100% - 120px);
+    border-radius: 20px;
+    background: #f3f7fc;
+    margin: 0 auto;
+    width: 1150px;
+    &:not(:last-child) {
+        margin-bottom: 35px;
+    }
+
+    .info {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        margin: 0 0 5px;
+        padding: 0;
+        .item {
+            display: inherit;
+            flex-flow: inherit;
+            align-items: inherit;
+            img {
+                margin-right: 5px;
+            }
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    .cta a {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 15px;
+        color: white;
+        background-color: #293341;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        margin-right: 10px;
+        width: 120px;
+    }
+}

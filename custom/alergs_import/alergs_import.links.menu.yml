@@ -1,0 +1,5 @@
+alergs_import.settings:
+  title: 'Alergs Web Service'
+  parent: system.admin_config_system
+  description: 'Configure for Alergs Import module.'
+  route_name: alergs_import.settings

@@ -1,0 +1,111 @@
+<?php
+
+/**
+ * @file
+ * Contains alergs_deputados.module.
+ */
+
+use Drupal\Core\Controller\ControllerBase;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use \Drupal\user\Entity\User;
+
+
+/**
+ * Implements hook_theme().
+ */
+function alergs_deputados_theme($existing, $type, $theme, $path) {
+  return [		
+    'alergs_deputados_deputados' => [
+      'render element' => 'children',
+      'template' => 'single_alt',
+      'path' => $path . '/templates',
+      'variables' => ['response' => NULL, 'id' => NULL],
+    ],
+    'alergs_deputados_pronunciamentos' => [
+      'render element' => 'children',
+      'template' => 'single',
+      'path' => $path . '/templates',
+      'variables' => ['response' => NULL, 'id' => NULL, 'uid' => NULL, 'personalData' => NULL],
+    ],
+    'alergs_deputados_proposicoes' => [
+      'render element' => 'children',
+      'template' => 'single',
+      'path' => $path . '/templates',
+      'variables' => ['response' => NULL, 'id' => NULL, 'uid' => NULL, 'personalData' => NULL],
+    ],    
+    'alergs_deputados_comissoes' => [
+      'render element' => 'children',
+      'template' => 'simple',
+      'path' => $path . '/templates',
+      'variables' => ['response' => NULL, 'id' => NULL, 'personalData' => NULL],
+    ],    
+    'alergs_deputados_contato' => [
+      'render element' => 'children',
+      'template' => 'simple',
+      'path' => $path . '/templates',
+      'variables' => ['response' => NULL, 'id' => NULL, 'personalData' => NULL],
+    ],
+    'alergs_deputados_imprensa' => [
+      'render element' => 'children',
+      'template' => 'simple',
+      'path' => $path . '/templates',
+      'variables' => ['response' => NULL, 'id' => NULL, 'personalData' => NULL],
+    ],    
+  ];
+}
+
+
+/**
+ * Implements alergs_get_destaques($id_deputado).
+ * Retorna array com IDs de artigos por deputado
+ */
+function alergs_get_artigos_deputado($id_deputado) {
+
+  $token_alergs = call_alergs_api_post();
+
+  $jsonData = array(
+      'top' =>  null,
+      'filtros' => array(
+        'idMateria' =>  array(),
+        'idDeputado' => array(),
+        'codProponente' => array($id_deputado),
+      )
+  );
+
+  $jsonDataEncoded = json_encode($jsonData);
+
+  $authorization = "Authorization: Bearer ".$token_alergs;
+
+  $dateInit = "CARGA DE CONTEUDO - HORA INCIAL - ".date("Y-m-d h:i:sa");
+
+  \Drupal::logger('alergs_import')->notice($dateInit);  
+
+
+  $url_listarNoticiasDeputados = \Drupal::config('alergs_import.settings')->get('alergs_import_url').'/alergsws/rest/agenciadenoticia/listarArtigosDeputados/json/';    
+  $curl = curl_init($url_listarNoticiasDeputados);
+  curl_setopt($curl, CURLOPT_POST, 1);
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization )); 
+  $result = curl_exec($curl);
+  curl_close($curl);  
+
+  $resultArray = json_decode($result, TRUE);
+
+  foreach ($resultArray as $key => $values) {
+
+      $count = 0;
+      $destaques = array();
+
+      foreach ($values as $news) {
+
+          ++$count;
+
+          $newsObject = json_decode(json_encode($news));
+          $artigos_deputados[] = $newsObject->idMateria;
+      }
+  }
+
+  return $artigos_deputados;
+
+}
